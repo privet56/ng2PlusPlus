@@ -1,0 +1,378 @@
+@font-face
+{
+    font-family: siemensslabbold;
+    src: url(css/font/SiemensSlabBold_West.woff);
+}
+/*  TEMPORARY FIX
+*[ptooltip]
+{
+    display:inline-block !important;
+}
+.ui-tooltip
+{
+  background:none !important;
+  background-color: red !important;
+  display:inline-block !important;
+}*/
+
+html
+{
+  position: relative;
+  height: 100%;
+  /*padding-top: 170px;   does not work as expected with ng2 2.4.3 (or bootstrap?)  */
+  padding-top: 0px;
+  font-size: 12px;
+  overflow: hidden;
+}
+body
+{
+  /* Margin bottom by footer height */
+  margin-bottom: 25px;
+}
+.footer
+{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 25px;
+}
+.container .text-muted
+{
+  margin: 5px 5px 5px 5px;
+}
+a, a:hover, a:visited, a:link, a:active
+{
+  text-decoration: none;
+  color: #0c316d !important;
+}
+a:hover
+{
+  color: #990000 !important;
+}
+.headerfooter
+{
+  background-color: #f2f2f2;
+}
+.navbar, .container-fluid
+{
+  padding: 0;
+  margin: 0;
+}
+.nav-link
+{
+    background-color:#e6e6e6 !important;
+}
+.nav-link.active
+{
+    background-color:white !important;
+}
+ul[role=tablist]
+{
+    background-color:#f2f2f2 !important;
+}
+button
+{
+  background-color:#a2a5aa;
+  color:white;
+  border: 2px solid;
+  border-radius: 5px;
+}
+.ui-editor-toolbar
+{
+  background: none !important;
+  background-color:#c0d6f9 !important;
+}
+.ui-widget-header
+{
+  background: none;
+  background-color: #f2f2f2;
+  border: none !important;
+}
+.ui-button-text-icon-left .ui-button-text 
+{
+  padding: 0 !important;
+}
+/* like .ui-widget-header */
+.ui-datatable th.ui-state-default
+{
+  background-color: #f2f2f2;
+}
+.column_id
+{
+    background-color: red !important;
+}
+div[role=tabpanel]
+{
+    display:none !important;
+}
+/* -------------- wait -------------- */
+.wait
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 188px;
+    margin:-99px 0 0 -99px;/*50% of width */
+    -webkit-animation:spin 2s linear infinite;
+    -moz-animation:spin 2s linear infinite;
+    animation:spin 2s linear infinite;
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+/* -------------- wait -------------- */
+
+/* override theme */
+#header
+{
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    clear: none;
+}
+select, input[type="text"] {
+  height: 23px;
+	/*margin-left:3px;*/
+	margin-right:auto;
+	padding:auto;
+}
+.ui-button-text-only .ui-button-text
+{
+    color: red;
+}
+.ui-multiselect .ui-multiselect-label
+{
+    padding: 0px 26px 0px 5px;/* top right bottom left */
+}
+.ui-datatable .ui-column-filter
+{
+  height:auto;
+  min-height: 19px;
+}
+h1, h2
+{
+  font-size:16px !important;
+  padding-top:5px;
+  padding-bottom:5px;
+  font-family: siemensslabbold;
+}
+.ui-corner-all,
+.ui-corner-top,
+.ui-corner-left,
+.ui-corner-tl {
+	border-top-left-radius: 6px;
+}
+.ui-corner-all,
+.ui-corner-top,
+.ui-corner-right,
+.ui-corner-tr {
+	border-top-right-radius: 6px;
+}
+.ui-corner-all,
+.ui-corner-bottom,
+.ui-corner-left,
+.ui-corner-bl {
+	border-bottom-left-radius: 6px;
+}
+.ui-corner-all,
+.ui-corner-bottom,
+.ui-corner-right,
+.ui-corner-br {
+	border-bottom-right-radius: 6px;
+}
+.ui-dialog .ui-dialog-titlebar
+{
+    background-color: #f2f2f2 !important;
+    margin:0px;
+    padding-top:9px;
+}
+button
+{
+  min-height: 23px;
+  min-width: 33px;
+}
+.fa-warning:before, .fa-exclamation-triangle:before {
+    content: " ";/* .ui-growl-image provides img */
+}
+.fa-info-circle:before {
+    content: " ";/* .ui-growl-image provides img */
+}
+.fa-error-circle:before {
+    content: " ";/* .ui-growl-image provides img */
+}
+/* scrollbars in dropdown visible on IE */
+.ui-dropdown-panel .ui-dropdown-items-wrapper
+{
+  overflow:hidden;
+}
+h3
+{
+    font-size: 16px;
+    color: #6e9fef;
+    font-weight: bold;
+    background-color: white;
+    width: 100%;
+    padding: 6px;
+    font-family: siemensslabbold;
+}
+a:link
+{
+  font-size: 13px;
+  color: #194996;
+}
+/* remove blue button styles (of bootstrap?) */
+.ui-button, button.ui-button.ui-state-default, .ui-button.ui-state-default
+{
+  background-color:#a2a5aa;
+  color:white;
+  border: 2px solid;
+  border-radius: 5px;
+}
+
+.ui-button, button.ui-button.ui-state-hover, .ui-button.ui-state-hover
+{
+  background-color:#a2a5aa;
+  color:white;
+  border: 2px solid;
+  border-radius: 5px;
+}
+button:hover
+{
+  background-color:#a2a5aa;
+  color:white;
+  border: 2px solid;
+  border-radius: 5px;
+}
+.linkdiv:hover
+{
+  background-color:#f2f2f2;
+}
+.headertext
+{
+  color:white !important;
+  font-size: 12px;
+}
+.ui-button-text-icon-left .ui-button-text
+{
+  margin-left: 22px;
+  margin-right: 9px;
+}
+.floatingIcon1
+{
+  height: 99px;
+  right: 33px;
+  
+  background:url(./css/img/text_A.gif) no-repeat 0;
+
+  margin-right: -56px;
+  margin-top: -20px;
+}
+.floatingIcon2
+{
+  height: 99px;
+  right: 33px;
+  
+  background:url(./assets/arrowExternal.png) no-repeat 0;
+
+  margin-right: -56px;
+  margin-top: -20px;
+}
+.floatingIconActive
+{
+  /*background-size: 90px;*/
+}
+/* switch begin */
+.ui-inputswitch
+{
+  height: 28px !important;
+}
+.ui-inputswitch-on
+{
+    height: 28px !important;
+    background:none !important;
+    background-color: #990000 !important;
+}
+.ui-inputswitch-off
+{
+    height: 28px !important;
+    background:none !important;
+    background-color: #6e9fef !important;
+}
+.ui-inputswitch .ui-inputswitch-handle
+{
+  height: 26px !important;
+}
+/*
+/* 'hits' * /
+.ui-inputswitch > div:nth-child(1)
+{
+  background:url(./assets/list.png) no-repeat 0 !important;
+  color:orange !important;
+}
+/* 'graph' * /
+.ui-inputswitch > div:nth-child(2)
+{
+  background:url(./assets/chart.png) no-repeat 0 !important;
+  color:blue !important;
+}
+*/
+
+/* switch end */
+
+button:disabled
+{
+    background:none !important;
+    background-color: #e8eef7 !important;
+    color:gray;
+    border-color: #e8eef7 !important;
+}
+.necessary
+{
+    color:red;
+}
+select.ng-invalid, input.ng-invalid
+{
+  border-color: red;
+  border: 1px solid red;
+}
+.ui-inputswitch-onlabel, .ui-inputswitch-offlabel
+{
+ padding-top:4px; 
+}
+
+@keyframes ngforani
+{
+  0%
+  {
+    padding-left: 100px;
+    background-color:gray;
+  }
+  100%
+  {
+    padding-left: 0px;
+  } 
+}
+.ngfor
+{
+  animation: ngforani 1s;
+}
+.button_pdf
+{
+	border-top-left-radius: 16px;
+	border-top-right-radius: 16px;
+	border-bottom-left-radius: 16px;
+	border-bottom-right-radius: 16px;
+  width:32px;
+  height:32px;
+  background-color: #f2f2f2;
+}
+.button_pdf:hover
+{
+	border-top-left-radius: 16px;
+	border-top-right-radius: 16px;
+	border-bottom-left-radius: 16px;
+	border-bottom-right-radius: 16px;
+}

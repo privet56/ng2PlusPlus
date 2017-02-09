@@ -1,0 +1,48 @@
+td
+{
+    vertical-align: top;
+    margin: 6px;
+    padding: 6px;
+}
+.homebox
+{
+    height: 188px;
+    width: 299px;
+    background-color: #e6e6e6;
+    padding:9px;
+    text-align: left;
+    font-size: 12px;
+    overflow:auto;
+    font-family: siemensslabbold;
+    margin-bottom: 19px;
+}
+.homebox_newsandevents
+{
+    font-size: 12px;
+    font-family: siemensslabbold;
+}
+.homebox button
+{
+    width: 199px;
+    height: 25px;
+}
+.dlglink
+{
+    color:red !important;
+}
+.homeboxbottomline
+{
+    background-color: #f2f4f7 !important;
+    height: auto;
+    font-size: 11px !important;
+}
+.homelink
+{
+    font-size: 11px !important;
+}
+.tdlinklist
+{
+    vertical-align: top;
+    margin: 0px;
+    padding: 0px;
+}

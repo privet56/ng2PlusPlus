@@ -1,0 +1,24 @@
+<s:Envelope xmlns:s="http://www.w3.org/2003/05/soap-envelope" xmlns:a="http://www.w3.org/2005/08/addressing">
+   <s:Header>
+      <a:Action s:mustUnderstand="1">Siemens.UnicoPlus.Lib.DataProvider/IDataProvider/GetEventsEntriesResponse</a:Action>
+      <a:RelatesTo>uuid:48f626cb-bf95-4d40-b79b-524037f2908e</a:RelatesTo>
+   </s:Header>
+   <s:Body>
+      <GetEventsEntriesResponse xmlns="Siemens.UnicoPlus.Lib.DataProvider">
+         <GetEventsEntriesResult xmlns:b="Siemens.UnicoPlus.Lib.DataModel" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+            <b:NewsEntry>
+               <b:ID>20</b:ID>
+               <b:Name>Test 3 Events Inga http://google.de/ </b:Name>
+               <b:Date>2016-06-15T09:49:46.617</b:Date>
+               <b:Description>Test für Email Adressen, Inga.zins@siemens.com, Ingazins@gmx.de Test für Email Adressen, Inga.zins@siemens.com, Ingazins@gmx.de Test für Email Adressen, Inga.zins@siemens.com, Ingazins@gmx.de Test für Email Adressen, Inga.zins@siemens.com, Ingazins@gmx.de</b:Description>
+            </b:NewsEntry>
+            <b:NewsEntry>
+               <b:ID>23</b:ID>
+               <b:Name>test final</b:Name>
+               <b:Date>2016-07-14T08:31:41.803</b:Date>
+               <b:Description/>
+            </b:NewsEntry>
+         </GetEventsEntriesResult>
+      </GetEventsEntriesResponse>
+   </s:Body>
+</s:Envelope>

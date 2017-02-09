@@ -1,0 +1,216 @@
+<div>
+  <form name="addnewcollabForm" #addnewcollabForm="ngForm" novalidate>
+  <table style="width:460px;">
+
+    <tr><!-- collaborationType -->
+      <td class="firsttd"> Collaboration Type:<sup class="necessary">*</sup> </td>
+      <td>
+        <select [(ngModel)]="collaborationType" name="collaborationType" required>
+          <option *ngFor="let collaborationType of collaborationTypes"
+            [value]="collaborationType.value">{{collaborationType.name}}</option>
+        </select>
+
+        <a href="#" style="color:white !important;margin-left:9px;" (click)="onHelp();"> <img src="assets/info_A.gif" alt="Help" title="Help" /> </a>
+      </td>
+    </tr>
+
+    <tr><!-- collaborationDetails-header -->
+      <td colspan="2" class="tdheader">
+
+        <a href="#" style="color:white !important;margin-left:1px;" (click)="toggleNextTR($event)"> <img src="assets/arrowInternal.png" /> </a>
+
+        Collaboration Details
+
+        <a href="#" style="color:white !important;margin-left:9px;" (click)="onHelp();"> <img src="assets/info_A.gif" alt="Help" title="Help" /> </a>
+       </td>
+    </tr>
+    <tr><!-- collaborationDetails -->
+      <td colspan="2">
+        <table>
+          <tr>
+            <td class="firsttd">Title (in English):<sup class="necessary">*</sup> </td>
+            <td><input name="title" [(ngModel)]="title" type="text" class="addnewcollabtxt" required></td>
+          </tr>
+          <tr>
+            <td class="firsttd">Title (in other language): </td>
+            <td><input name="titleinotherlanguage" [(ngModel)]="titleinotherlanguage" type="text" class="addnewcollabtxt"></td>
+          </tr>
+          <tr>
+            <td class="firsttd">Acronym: </td>
+            <td><input type="text" class="addnewcollabtxt"></td>
+          </tr>
+          <tr>
+            <td class="firsttd">Abstract: </td>
+            <td><input type="text" class="addnewcollabtxt"></td>
+          </tr>
+          <tr>
+            <td class="firsttd">Technology Field: </td>
+            <td><input type="text" class="addnewcollabtxt"></td>
+          </tr>
+          <tr>
+            <td class="firsttd">Keywords: </td>
+            <td><input type="text" class="addnewcollabtxt"></td>
+          </tr>
+        </table>
+      </td>
+    </tr><!-- collaborationDetails end -->
+
+    <tr><!-- Information about participating Siemens unit-header -->
+      <td colspan="2" class="tdheader">
+
+        <a href="#" style="color:white !important;margin-left:1px;" (click)="toggleNextTR($event)"> <img src="assets/arrowInternal.png" /> </a>
+
+        Information about participating Siemens unit
+
+        <a href="#" style="color:white !important;margin-left:9px;" (click)="onHelp();"> <img src="assets/info_A.gif" alt="Help" title="Help" /> </a>
+       </td>
+    </tr>
+    <tr><!-- Information about participating Siemens unit -->
+      <td colspan="2">
+        <table>
+          <tr>
+            <td class="firsttd">Org-Level 1:<sup class="necessary">*</sup> </td>
+            <td><select required [(ngModel)]="orgLevel1" name="orgLevel1"><option></option></select></td>
+          </tr>
+          <tr *ngIf="false">
+            <td class="firsttd">Org-Level 2:<sup class="necessary">*</sup> </td>
+            <td><select required></select></td>
+          </tr>
+          <tr *ngIf="false">
+            <td class="firsttd">Org-Level 3:<sup class="necessary">*</sup> </td>
+            <td><select required></select></td>
+          </tr>          
+          <tr>
+            <td colspan="9" ngFormGroup="SiemensContacts">
+              <app-contacts></app-contacts>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr><!-- Information about participating Siemens unit end -->
+
+
+    <tr><!-- Information about Academic Partners-header -->
+      <td colspan="2" class="tdheader">
+
+        <a href="#" style="color:white !important;margin-left:1px;" (click)="toggleNextTR($event)"> <img src="assets/arrowInternal.png" /> </a>
+
+        Information about Academic Partners
+
+        <a href="#" style="color:white !important;margin-left:9px;" (click)="onHelp();"> <img src="assets/info_A.gif" alt="Help" title="Help" /> </a>
+       </td>
+    </tr>
+    <tr><!-- Information about Academic Partners -->
+    <!-- //TODO: -->
+      <td colspan="2">
+        <table>
+          <tr>
+            <td class="firsttd">...:<sup class="necessary">*</sup> </td>
+            <td><select required></select></td>
+          </tr>
+        </table>
+      </td>
+    </tr><!-- Information about Academic Partners END -->
+    <tr><!-- Information about Duration-header -->
+      <td colspan="2" class="tdheader">
+
+        <a href="#" style="color:white !important;margin-left:1px;" (click)="toggleNextTR($event)"> <img src="assets/arrowInternal.png" /> </a>
+
+        Information about Duration
+
+        <a href="#" style="color:white !important;margin-left:9px;" (click)="onHelp();"> <img src="assets/info_A.gif" alt="Help" title="Help" /> </a>
+       </td>
+    </tr>
+    <tr><!-- Information about Duration -->
+      <td colspan="2">
+        <table>
+          <tr>
+            <td class="firsttd">Duration:<sup class="necessary">*</sup> </td>
+            <td style="white-space:nowrap;">
+              <input type="date" required name="duration" [(ngModel)]="duration">
+              to:
+              <input type="date" required name="durationto" [(ngModel)]="durationto">
+            </td>
+          </tr>
+          <tr>
+            <td class="firsttd"> &nbsp; </td>
+            <td>
+              <div class="form-check checkbox">
+                <input type="checkbox" value="Ongoing" class="form-check-input">
+                <label class="form-check-label">
+                  Ongoing
+                </label>
+              </div>
+            </td>
+          </tr>          
+        </table>
+      </td>
+    </tr><!-- Information about Duration END -->
+    <tr><!-- Additional Information-header -->
+      <td colspan="2" class="tdheader">
+
+        <a href="#" style="color:white !important;margin-left:1px;" (click)="toggleNextTR($event)"> <img src="assets/arrowInternal.png" /> </a>
+
+        Additional Information
+
+        <a href="#" style="color:white !important;margin-left:9px;" (click)="onHelp();"> <img src="assets/info_A.gif" alt="Help" title="Help" /> </a>
+       </td>
+    </tr>
+    <tr><!-- Additional Information -->
+      <td colspan="2">
+        <table>
+          <tr>
+            <td class="firsttd">Project Evaluation Comment: </td>
+            <td style="white-space:nowrap;">
+              <input type="text" class="addnewcollabtxt">
+            </td>
+          </tr>
+          <tr>
+            <td class="firsttd">General Comment: </td>
+            <td style="white-space:nowrap;">
+              <input type="text" class="addnewcollabtxt">
+            </td>
+          </tr>
+          <tr>
+            <td class="firsttd" colspan="9">
+              <table>
+                <tr>
+                  <td style="vertical-align:top;width:111px;">
+                    Attachments:
+                  </td>            
+                  <td ngFormGroup="Attachments">
+                    <app-attachments></app-attachments>
+                  </td>
+                </tr>
+              </table>                            
+            </td>
+          </tr>
+          <tr>
+            <td class="firsttd">Connected to Collab. UNICO-ID:</td>
+            <td style="white-space:nowrap;">
+              <input type="text" class="addnewcollabtxt">
+            </td>
+          </tr>
+          
+        </table>
+      </td>
+    </tr><!-- Additional Information END -->
+
+
+
+
+
+    <tr><!-- save -->
+      <td colspan="2" style="padding-top:11px;">
+        <button (click)="onSubmit(addnewcollabForm)" [disabled]="!addnewcollabForm.valid">Save</button>
+      </td>
+    </tr><!-- save end -->
+    <tr><!-- space -->
+      <td colspan="2" style="padding-top:11px;">
+        &nbsp;
+      </td>
+    </tr><!-- space end -->
+
+  </table>
+  </form>
+</div>

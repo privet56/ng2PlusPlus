@@ -1,0 +1,11 @@
+.frameworkico
+{
+    height: 66px;
+}
+td
+{
+    vertical-align: middle;
+    font-size: 15px;
+    white-space: nowrap;
+    padding: 9px 19px 9px 19px;
+}

@@ -1,0 +1,23 @@
+.tdheader
+{
+    padding-top: 9px;
+    font-weight: bold;
+    border-bottom: thin solid lightgray;
+}
+.addnewcollabtxt
+{
+    width: 199px;
+}
+.firsttd
+{
+    width: 199px;
+    padding-left: 9px;
+}
+table, td, tr
+{
+    /*border: 1px solid black;*/
+}
+select
+{
+    width: 199px; 
+}

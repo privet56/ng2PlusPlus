@@ -1,0 +1,50 @@
+<div>
+  <table style="margin-left:9px;margin-top:0px;width:100%;">
+    <tr *ngFor="let attachment of attachments; let i = index" style="background-color:#f2f2f2;border-bottom: 7px solid white;" class="ngfor">
+      <td style="width:6px;background-color:white;vertical-align:center;border-left: 1px solid #ddd;">
+      </td>
+      <td>
+        <table style="width:100%">
+          <tr>
+            <td class="firsttd" style="padding-left:3px;padding-right:3px;vertical-align:top;">
+              <img src="assets/upload.png" style="width:16px;">
+            </td>
+            <td style="width:100%;min-width:299px;">
+              <span style="color:blue;">{{ attachment.fn }}</span>
+              <br>
+              <span style="font-size:7px;">({{ attachment.type }}, {{ attachment.fc.length }} bytes)</span>
+            </td>
+            <td style="text-align:right;vertical-align:top;">
+              <button pButton type="button" (click)="onRemove(attachment, i)" label="x"
+                style="margin-top:0px;color:red;background:none !important;background-color:#f2f2f2 !important;border-color:#f2f2f2;font-weight:bold;font-size:11px;"
+                class="ui-button-text-icon-left"
+                icon2="fa-close" pTooltip="Remove this attachment" tooltipPosition="top"></button>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="9" style="background-color:#f2f2f2;font-size:7px;">
+              {{ attachment.preview(999) }} 
+            </td>
+          </tr>          
+          <tr>
+            <td class="firsttd">
+              &nbsp; 
+            </td>            
+            <td colspan="9">
+              <input type="checkbox"> mark attachment confidential 
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+
+  <input type="file" #fileAttachment style="display:none;" (change)="onFileAttachmentChanged(fileAttachment)" accept=".xls,.xlsx,.doc,.docx,.pdf,.txt" />
+
+  <div style="margin-left:6px;">
+
+    <a href="#" style="color:white !important;margin-left:1px;" (click)="onAddAttachment($event, fileAttachment);"> <img src="assets/arrowInternal.png" /> </a>
+    Add Attachment
+  </div>
+  
+</div>

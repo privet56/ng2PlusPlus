@@ -1,0 +1,202 @@
+<s:Envelope xmlns:s="http://www.w3.org/2003/05/soap-envelope" xmlns:a="http://www.w3.org/2005/08/addressing">
+   <s:Header>
+      <a:Action s:mustUnderstand="1">Siemens.UnicoPlus.Lib.DataProvider/IDataProvider/GetCollaborationSearchHitsResponse</a:Action>
+      <AuthTicket_username xmlns="Siemens.UnicoPlus.Lib.DataProvider">Z0000001</AuthTicket_username>
+      <AuthTicket_gid xmlns="Siemens.UnicoPlus.Lib.DataProvider">[null]</AuthTicket_gid>
+   </s:Header>
+   <s:Body>
+      <GetCollaborationSearchHitsResponse xmlns="Siemens.UnicoPlus.Lib.DataProvider">
+         <GetCollaborationSearchHitsResult xmlns:b="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+            <b:int>8527</b:int>
+            <b:int>6173</b:int>
+            <b:int>4177</b:int>
+         </GetCollaborationSearchHitsResult>
+         <filters xmlns:b="Siemens.UnicoPlus.Lib.DataModel" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+            <b:CollaborationTypeFilter>
+               <b:DataEntity>
+                  <b:ID>11000</b:ID>
+                  <b:Name>Sponsorings / Donations / Other contributions</b:Name>
+               </b:DataEntity>
+            </b:CollaborationTypeFilter>
+            <b:InstitutionContactFilter>
+               <b:Contact>
+                  <b:ID>0</b:ID>
+                  <b:Name>(blank)</b:Name>
+                  <b:FirstName i:nil="true"/>
+                  <b:Title i:nil="true"/>
+               </b:Contact>
+            </b:InstitutionContactFilter>
+            <b:InstitutionFilter>
+               <b:DataEntity>
+                  <b:ID>2466</b:ID>
+                  <b:Name>École nationale polytechnique d'Alger</b:Name>
+               </b:DataEntity>
+               <b:DataEntity>
+                  <b:ID>2729</b:ID>
+                  <b:Name>Université des Sciences et des Technologies Houari Boumediene (USTHB)</b:Name>
+               </b:DataEntity>
+            </b:InstitutionFilter>
+            <b:ResearchAreaFilter/>
+            <b:SiemensBUFilter>
+               <b:DataEntity>
+                  <b:ID>0</b:ID>
+                  <b:Name>(blank)</b:Name>
+               </b:DataEntity>
+            </b:SiemensBUFilter>
+            <b:SiemensContactFilter>
+               <b:Contact>
+                  <b:ID>0</b:ID>
+                  <b:Name>BOUMEDIENE</b:Name>
+                  <b:FirstName>MERIEM</b:FirstName>
+                  <b:Title i:nil="true"/>
+               </b:Contact>
+            </b:SiemensContactFilter>
+            <b:SiemensDivisionFilter>
+               <b:DataEntity>
+                  <b:ID>0</b:ID>
+                  <b:Name>(blank)</b:Name>
+               </b:DataEntity>
+            </b:SiemensDivisionFilter>
+            <b:SiemensSectorFilter>
+               <b:DataEntity>
+                  <b:ID>3</b:ID>
+                  <b:Name>I</b:Name>
+               </b:DataEntity>
+            </b:SiemensSectorFilter>
+         </filters>
+         <reportingResults xmlns:b="Siemens.UnicoPlus.Lib.DataModel" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+            <b:ReportingRecordsCollaborationType xmlns:c="http://schemas.datacontract.org/2004/07/Siemens.UnicoPlus.Lib.DataModel">
+               <c:ReportingRecordCollaborationType>
+                  <b:BudgetForCollaborationPartner>0</b:BudgetForCollaborationPartner>
+                  <b:NumberOfCollaborations>3</b:NumberOfCollaborations>
+                  <b:ViewBudgetNotAllowed>3</b:ViewBudgetNotAllowed>
+                  <c:CollaborationType>Total</c:CollaborationType>
+               </c:ReportingRecordCollaborationType>
+               <c:ReportingRecordCollaborationType>
+                  <b:BudgetForCollaborationPartner>0</b:BudgetForCollaborationPartner>
+                  <b:NumberOfCollaborations>3</b:NumberOfCollaborations>
+                  <b:ViewBudgetNotAllowed>3</b:ViewBudgetNotAllowed>
+                  <c:CollaborationType>Sponsorings / Donations / Other contributions</c:CollaborationType>
+               </c:ReportingRecordCollaborationType>
+            </b:ReportingRecordsCollaborationType>
+            <b:ReportingRecordsInstitution xmlns:c="http://schemas.datacontract.org/2004/07/Siemens.UnicoPlus.Lib.DataModel">
+               <c:ReportingRecordInstitution>
+                  <b:BudgetForCollaborationPartner>0</b:BudgetForCollaborationPartner>
+                  <b:NumberOfCollaborations>3</b:NumberOfCollaborations>
+                  <b:ViewBudgetNotAllowed>3</b:ViewBudgetNotAllowed>
+                  <c:Institution>Total</c:Institution>
+               </c:ReportingRecordInstitution>
+               <c:ReportingRecordInstitution>
+                  <b:BudgetForCollaborationPartner>0</b:BudgetForCollaborationPartner>
+                  <b:NumberOfCollaborations>2</b:NumberOfCollaborations>
+                  <b:ViewBudgetNotAllowed>2</b:ViewBudgetNotAllowed>
+                  <c:Institution>École nationale polytechnique d'Alger</c:Institution>
+               </c:ReportingRecordInstitution>
+               <c:ReportingRecordInstitution>
+                  <b:BudgetForCollaborationPartner>0</b:BudgetForCollaborationPartner>
+                  <b:NumberOfCollaborations>1</b:NumberOfCollaborations>
+                  <b:ViewBudgetNotAllowed>1</b:ViewBudgetNotAllowed>
+                  <c:Institution>Université des Sciences et des Technologies Houari Boumediene (USTHB)</c:Institution>
+               </c:ReportingRecordInstitution>
+            </b:ReportingRecordsInstitution>
+            <b:ReportingRecordsInstitutionCountry xmlns:c="http://schemas.datacontract.org/2004/07/Siemens.UnicoPlus.Lib.DataModel">
+               <c:ReportingRecordInstitutionCountry>
+                  <b:BudgetForCollaborationPartner>0</b:BudgetForCollaborationPartner>
+                  <b:NumberOfCollaborations>3</b:NumberOfCollaborations>
+                  <b:ViewBudgetNotAllowed>3</b:ViewBudgetNotAllowed>
+                  <c:InstitutionCountry>Total</c:InstitutionCountry>
+               </c:ReportingRecordInstitutionCountry>
+               <c:ReportingRecordInstitutionCountry>
+                  <b:BudgetForCollaborationPartner>0</b:BudgetForCollaborationPartner>
+                  <b:NumberOfCollaborations>3</b:NumberOfCollaborations>
+                  <b:ViewBudgetNotAllowed>3</b:ViewBudgetNotAllowed>
+                  <c:InstitutionCountry>Algeria</c:InstitutionCountry>
+               </c:ReportingRecordInstitutionCountry>
+            </b:ReportingRecordsInstitutionCountry>
+            <b:ReportingRecordsSiemensBU xmlns:c="http://schemas.datacontract.org/2004/07/Siemens.UnicoPlus.Lib.DataModel">
+               <c:ReportingRecordSiemensSectorDivisionBU>
+                  <b:BudgetForCollaborationPartner>0</b:BudgetForCollaborationPartner>
+                  <b:NumberOfCollaborations>3</b:NumberOfCollaborations>
+                  <b:ViewBudgetNotAllowed>3</b:ViewBudgetNotAllowed>
+                  <c:BU>Total</c:BU>
+                  <c:Division>---</c:Division>
+                  <c:Sector>---</c:Sector>
+               </c:ReportingRecordSiemensSectorDivisionBU>
+               <c:ReportingRecordSiemensSectorDivisionBU>
+                  <b:BudgetForCollaborationPartner>0</b:BudgetForCollaborationPartner>
+                  <b:NumberOfCollaborations>3</b:NumberOfCollaborations>
+                  <b:ViewBudgetNotAllowed>3</b:ViewBudgetNotAllowed>
+                  <c:BU>undefined</c:BU>
+                  <c:Division>---</c:Division>
+                  <c:Sector>---</c:Sector>
+               </c:ReportingRecordSiemensSectorDivisionBU>
+            </b:ReportingRecordsSiemensBU>
+            <b:ReportingRecordsSiemensCountry xmlns:c="http://schemas.datacontract.org/2004/07/Siemens.UnicoPlus.Lib.DataModel">
+               <c:ReportingRecordSiemensCountry>
+                  <b:BudgetForCollaborationPartner>0</b:BudgetForCollaborationPartner>
+                  <b:NumberOfCollaborations>3</b:NumberOfCollaborations>
+                  <b:ViewBudgetNotAllowed>3</b:ViewBudgetNotAllowed>
+                  <c:SiemensCountry>Total</c:SiemensCountry>
+               </c:ReportingRecordSiemensCountry>
+               <c:ReportingRecordSiemensCountry>
+                  <b:BudgetForCollaborationPartner>0</b:BudgetForCollaborationPartner>
+                  <b:NumberOfCollaborations>3</b:NumberOfCollaborations>
+                  <b:ViewBudgetNotAllowed>3</b:ViewBudgetNotAllowed>
+                  <c:SiemensCountry>Algeria</c:SiemensCountry>
+               </c:ReportingRecordSiemensCountry>
+            </b:ReportingRecordsSiemensCountry>
+            <b:ReportingRecordsSiemensDivision xmlns:c="http://schemas.datacontract.org/2004/07/Siemens.UnicoPlus.Lib.DataModel">
+               <c:ReportingRecordSiemensSectorDivisionBU>
+                  <b:BudgetForCollaborationPartner>0</b:BudgetForCollaborationPartner>
+                  <b:NumberOfCollaborations>3</b:NumberOfCollaborations>
+                  <b:ViewBudgetNotAllowed>3</b:ViewBudgetNotAllowed>
+                  <c:BU>---</c:BU>
+                  <c:Division>Total</c:Division>
+                  <c:Sector>---</c:Sector>
+               </c:ReportingRecordSiemensSectorDivisionBU>
+               <c:ReportingRecordSiemensSectorDivisionBU>
+                  <b:BudgetForCollaborationPartner>0</b:BudgetForCollaborationPartner>
+                  <b:NumberOfCollaborations>3</b:NumberOfCollaborations>
+                  <b:ViewBudgetNotAllowed>3</b:ViewBudgetNotAllowed>
+                  <c:BU>Total</c:BU>
+                  <c:Division>undefined</c:Division>
+                  <c:Sector>---</c:Sector>
+               </c:ReportingRecordSiemensSectorDivisionBU>
+            </b:ReportingRecordsSiemensDivision>
+            <b:ReportingRecordsSiemensSector xmlns:c="http://schemas.datacontract.org/2004/07/Siemens.UnicoPlus.Lib.DataModel">
+               <c:ReportingRecordSiemensSectorDivisionBU>
+                  <b:BudgetForCollaborationPartner>0</b:BudgetForCollaborationPartner>
+                  <b:NumberOfCollaborations>3</b:NumberOfCollaborations>
+                  <b:ViewBudgetNotAllowed>3</b:ViewBudgetNotAllowed>
+                  <c:BU>---</c:BU>
+                  <c:Division>---</c:Division>
+                  <c:Sector>Total</c:Sector>
+               </c:ReportingRecordSiemensSectorDivisionBU>
+               <c:ReportingRecordSiemensSectorDivisionBU>
+                  <b:BudgetForCollaborationPartner>0</b:BudgetForCollaborationPartner>
+                  <b:NumberOfCollaborations>3</b:NumberOfCollaborations>
+                  <b:ViewBudgetNotAllowed>3</b:ViewBudgetNotAllowed>
+                  <c:BU>Total</c:BU>
+                  <c:Division>Total</c:Division>
+                  <c:Sector>I</c:Sector>
+               </c:ReportingRecordSiemensSectorDivisionBU>
+            </b:ReportingRecordsSiemensSector>
+            <b:ReportingRecordsStatus xmlns:c="http://schemas.datacontract.org/2004/07/Siemens.UnicoPlus.Lib.DataModel">
+               <c:ReportingRecordStatus>
+                  <b:BudgetForCollaborationPartner>0</b:BudgetForCollaborationPartner>
+                  <b:NumberOfCollaborations>3</b:NumberOfCollaborations>
+                  <b:ViewBudgetNotAllowed>3</b:ViewBudgetNotAllowed>
+                  <c:Status>Total</c:Status>
+               </c:ReportingRecordStatus>
+               <c:ReportingRecordStatus>
+                  <b:BudgetForCollaborationPartner>0</b:BudgetForCollaborationPartner>
+                  <b:NumberOfCollaborations>3</b:NumberOfCollaborations>
+                  <b:ViewBudgetNotAllowed>3</b:ViewBudgetNotAllowed>
+                  <c:Status>completed</c:Status>
+               </c:ReportingRecordStatus>
+            </b:ReportingRecordsStatus>
+         </reportingResults>
+         <fySpec>0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,44,45,46,47,48,57,58,59,61,62,63,64,65,66</fySpec>
+      </GetCollaborationSearchHitsResponse>
+   </s:Body>
+</s:Envelope>

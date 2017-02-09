@@ -1,0 +1,117 @@
+<div style="padding-top:11px;margin-bottom:16px;">
+
+  <table>
+    <tr>
+      <td><h3>Analysis results:</h3></td>
+      <td style="padding-left: 33px;">
+          <!-- TODO: insert pic onto the switch -->
+          <!-- alternative: SelectButton -->
+          <p-inputSwitch [(ngModel)]="showGraph"
+            onLabel= " &nbsp; &nbsp; Graph &nbsp; &nbsp; "
+            offLabel=" &nbsp; &nbsp; Hits &nbsp; &nbsp; "
+            (onChange)="onShowGraph($event)"
+            pTooltip="Switch Graph / Hitlist Display!" tooltipPosition="right">
+          </p-inputSwitch>
+      </td>
+    </tr>
+  </table>
+   
+  <div [style.display]="showGraph ? 'block' : 'none'">  <!-- *ngIf="showGraph" -->
+
+    <app-graphs #graphs></app-graphs>
+
+  </div>
+
+  <!-- [scrollable]="true" removes "no records found" message -->
+  <!-- [style]="{'width':'40px'}" works only if [resizableColumns]="false" -->
+  <!-- *ngIf="!showGraph" -->
+
+  <p-dataTable [value]="hits"
+      [rows]="10"
+      [style.display]="!showGraph ? 'block' : 'none'"
+      [paginator]="true"
+      selectionMode="single"
+      [(selection)]="selectedHit"
+      [editable]="false"
+      [resizableColumns]="false"
+			[reorderableColumns]="false"
+			[scrollable]="false"
+      scrollHeight="200px"
+			[responsive]="true"
+			(onRowSelect)="onRowSelect($event)"
+       >
+
+      <header><span style="color:orange;margin-left:33px;">{{hitsDesc}}</span></header>
+      <footer><span style="color:orange;margin-left:33px;">{{hitResolvDesc}}</span></footer>
+
+      <!-- ID -->
+      <p-column field="id" header="ID" [filter]="true" filterMatchMode="contains" [style]="{'width':'70px'}" sortable="custom" (sortFunction)="sort($event)">
+		    <template pTemplate="header">
+			    <span label="ID"
+            style="padding:4px;"
+            pTooltip="Find!" tooltipPosition="top"
+          >ID</span>
+		    </template>
+        <template pTemplate="body" let-hit="rowData">
+          <div pTooltip="The ID of the collaboration"
+            tooltipPosition="top"
+            class="cell" style="width:9px"
+            (click)="onRowSelect({data:hit})">
+              {{ hit.id }}
+          </div>
+        </template>
+      </p-column>
+      <!-- title -->
+      <p-column field="Title" header="Title (in English)" [sortable]="true"  [filter]="true" filterMatchMode="contains" (sortFunction)="sort($event)">
+        <template pTemplate="body" let-hit="rowData">
+          <div pTooltip="<div><strong style='color:white'>Title:</strong></div> {{ hit.getTitle() }}"
+            tooltipPosition="top"
+            class="cell"
+            (click)="onRowSelect({data:hit})">          
+              {{hit.getTitle() | truncate : 33 }}
+          </div>
+        </template>
+      </p-column>
+      <!-- status -->
+      <p-column field="hitDetails.StatusName" header="Status" [sortable]="true" [filter]="true" (sortFunction)="sort($event)">
+
+      </p-column>
+      <!-- orglevel1 -->
+      <p-column field="hitDetails.SiemensSectorName" header="Org-Level 1" [sortable]="true" [filter]="true" (sortFunction)="sort($event)">
+
+      </p-column>
+      <!-- siemenscontactName -->
+      <p-column field="hitDetails.SiemensContacts.SiemensContact.Name" header="SiemensContact" [sortable]="true"  [filter]="true" filterMatchMode="contains" (sortFunction)="sort($event)">
+        <template pTemplate="body" let-hit="rowData">
+          <div pTooltip="The main Siemens Contact is<br><span style='color:red;'>{{hit.hitDetails.SiemensContacts.SiemensContact.FirstName+' '+hit.hitDetails.SiemensContacts.SiemensContact.Name}}</span>"
+            tooltipPosition="top"
+            class="cell" (click)="onRowSelect({data:hit})">
+            {{ hit.hitDetails.SiemensContacts.SiemensContact.Name }}
+            {{ hit.hitDetails.SiemensContacts.SiemensContact.FirstName }}
+          </div>
+        </template>
+      </p-column>
+      <!-- lastRevisor -->
+      <p-column field="hitDetails.LastRevisor" header="Revisor" [sortable]="true"  [filter]="true" filterMatchMode="contains" [sortable]="true" (sortFunction)="sort($event)">
+
+      </p-column>
+      <!-- type -->
+      <p-column field="hitDetails.CollaborationTypeName" header="Collaboration Type" [sortable]="true" [filter]="true" (sortFunction)="sort($event)">
+        <template pTemplate="body" let-hit="rowData">
+          <div pTooltip="{{ hit.hitDetails.CollaborationTypeName }}"
+            tooltipPosition="top"
+            class="cell"  (click)="onRowSelect({data:hit})">
+            {{ hit.hitDetails.CollaborationTypeName | truncate : 33 }}
+          </div>
+        </template>
+      </p-column>
+      <!-- siemensbudget -->
+      <p-column field="hitDetails.SiemensBudget" header="Budget" [sortable]="true" [filter]="true" (sortFunction)="sort($event)">
+        <template pTemplate="body" let-hit="rowData">
+          <div class="cell" (click)="onRowSelect({data:hit})">
+            {{ hit.getSiemensBudget() | currency :'EUR':'4.2-2' }}
+          </div>
+          </template>        
+      </p-column>
+  </p-dataTable>
+</div>

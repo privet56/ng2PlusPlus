@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SearchRequest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<FreeTextSearchCondition>
+	<CheckFor exclude="false">heart</CheckFor>
+</FreeTextSearchCondition>
+<CooperationStatusCondition>
+	<CheckFor exclude="false">1000</CheckFor>
+</CooperationStatusCondition>
+<CooperationStatusCondition>
+	<CheckFor exclude="true">2000</CheckFor>
+</CooperationStatusCondition>
+<CooperationStatusCondition>
+	<CheckFor exclude="false">3000</CheckFor>
+</CooperationStatusCondition>
+</SearchRequest>

@@ -1,0 +1,35 @@
+<!-- TODO: [maximizable]="true" [hideEffect]="slide" -->
+<!-- [modal]="modal" style="height:399px;width:499px" -->
+<!-- [showEffect]="fade" not supported anymore //TODO: check new attr -->
+<!-- style="position:absolute;z-index:99999;" //TODO: check how to do in the new version! -->
+
+<p-dialog [(visible)]="showDlg"
+    [resizable]="true"
+    [appendTo]="body"
+    [draggable]="true"
+    (onAfterHide)="onAfterHide($event)"
+    [minWidth]=500
+    [minHeight]=400
+    [width]=500>
+    
+    <header>
+      <div #dlgHeader [innerHTML]="header">Information</div>    
+    </header>
+
+    <div #dlgContent [innerHTML]="content | sani"  *ngIf="!childComponentRef"
+      style="background-color:#f7f9fc;vertical-align:middle;text-align:left;min-height:150px;max-height:500px;">&nbsp;
+    </div>
+
+    <div [hidden]="!childComponentRef"
+      style="background-color:#f7f9fc;vertical-align:middle;text-align:left;min-height:150px;max-height:500px;">
+      <div #dlgContent4Template></div>
+    </div>
+      
+    <footer>
+        <div #dlgFooter style="float:right;margin:6px;">
+          <button pButton type="button" (click)="hideDlg()" label="Close"
+             pTooltip="Click to Close" tooltipPosition="top" icon="fa fa-times-circle" style="float:right;min-width:85px;">
+          </button>
+        </div>
+    </footer>
+</p-dialog>

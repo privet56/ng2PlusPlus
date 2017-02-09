@@ -1,0 +1,69 @@
+<table>
+  <tr>
+    <td>
+      <div>
+        <h2>News</h2>
+        <div class="ui-corner-all homebox homebox_newsandevents">
+          <h3 class="ui-corner-all" [innerHTML]="news.Name | truncate : 399 "></h3>
+          <h6 class="ui-corner-all" [innerHTML]="news.Date | date:fullDate"></h6>
+          <span [innerHTML]="news.Description | truncate : 399 "></span>
+           <a href="#" (click)="onText(news, 'News');" class="dlglink"> &gt;&gt;</a>
+        </div>
+      </div>
+      <div>
+        <h2>Tools and Services</h2>
+        <div class="ui-corner-all homebox homeboxbottomline">
+          <table>
+            <tr><td class="tdlinklist"> <a href="#" class="homelink" target="_new"> <img src="./assets/arrowExternal.png" alt=""> &nbsp; UniSearch </a> </td></tr>
+            <tr><td class="tdlinklist"> <a href="#" class="homelink" target="_new"> <img src="./assets/arrowExternal.png" alt=""> &nbsp; SpoDoM </a> </td></tr>
+            <tr><td class="tdlinklist"> <a href="#" class="homelink" target="_new"> <img src="./assets/arrowExternal.png" alt=""> &nbsp; OPERA </a> </td></tr>
+          </table>
+        </div>
+      </div>
+    </td>
+
+    <td>
+      <div>
+        <h2>Events &amp; Trainings</h2>
+        <div class="ui-corner-all homebox homebox_newsandevents">
+          <h3 class="ui-corner-all" [innerHTML]="event.Name | truncate : 399 "></h3>
+          <h6 class="ui-corner-all" [innerHTML]="event.Date | date:fullDate"></h6>
+          <span [innerHTML]="event.Description | truncate : 399 "></span>
+           <a href="#" (click)="onText(event, 'Event');" class="dlglink"> &gt;&gt;</a>
+        </div>
+      </div>
+      <div>
+        <h2>University Relations</h2>
+        <div class="ui-corner-all homebox homeboxbottomline">
+          <table>
+            <tr><td class="tdlinklist"> <a href="#" class="homelink" target="_new"> <img src="./assets/arrowExternal.png" alt=""> &nbsp; University Relations Homepage </a> </td></tr>
+            <tr><td class="tdlinklist"> <a href="#" class="homelink" target="_new"> <img src="./assets/arrowExternal.png" alt=""> &nbsp; Contracts with Universities </a> </td></tr>
+            <tr><td class="tdlinklist"> <a href="#" class="homelink" target="_new"> <img src="./assets/arrowExternal.png" alt=""> &nbsp; Publicly funded R&D </a> </td></tr>
+          </table>
+        </div>
+      </div>      
+    </td>
+
+    <td>
+      <div>
+        <h2>Information and Help</h2>
+        <div class="ui-corner-all homebox" style="text-align:center;padding-top:33px;">
+          <a href="#" #lnk target="_new"></a>
+          <button pButton type="button" (click)="onPDF('assets/QuickStartGuide_UnicoPlus.pdf', lnk)" label="Quick Start Guide (PDF)"
+             class="homebutton"
+             pTooltip="Click to View the Quick Start Guide" tooltipPosition="top" icon="fa fa-file-pdf-o">
+          </button>
+          <div style="height:3px;"> </div>
+          <button #bWHATISUNICO pButton type="button" (click)="onVid('assets/vids/What_Is_UNICO.mp4', bWHATISUNICO)" label="Video: What Is UNICO++?"
+             class="homebutton"
+             pTooltip="Click to View 'Video: What Is UNICO++'" tooltipPosition="top" icon="fa fa-video-camera"></button>
+          <div style="height:3px;"> </div>
+          <button #bUNICOOVERVIEW pButton type="button" (click)="onVid('assets/vids/UNICO_Overview.mp4', bUNICOOVERVIEW)" label="Video: UNICO++ Overview"
+             class="homebutton"
+             pTooltip="Click to View 'Video: UNICO++ Overview'" tooltipPosition="top" icon="fa fa-video-camera"></button>
+          <div style="height:3px;"> </div>
+        </div>
+      </div>
+    </td>    
+  </tr>
+</table>

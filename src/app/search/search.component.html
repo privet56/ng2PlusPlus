@@ -1,0 +1,28 @@
+<form>
+  <app-search-form-lines #searchFormLines>
+  </app-search-form-lines>
+</form>
+<br />
+<br />
+<br />
+<p>
+
+  <input type="file" #fileUpload style="display:none;" (change)="onLoadFilterCriteria(fileUpload)" />
+
+  <!-- for IE: https://github.com/koffsyrup/FileSaver.js -->
+  <!-- for IE: https://github.com/dcneiner/Downloadify -->
+  <a #fileDownload href="data:application/xml;charset=utf-8," download="filterCriteria.xml"></a>
+
+  <button (click)="onAnalyze()" pTooltip="Find!" tooltipPosition="top" [disabled]="!canSearch()">Analyze</button>
+  &nbsp;
+  <button (click)="onStoreFilterCriteria(fileDownload)" [disabled]="!canSearch()" pTooltip="Store Criterias!" tooltipPosition="top">Store Filter Criteria...</button>
+  &nbsp;
+  <button (click)="fileUpload.click();" pTooltip="Load Criterias!" tooltipPosition="top">Load Filter Criteria...</button>
+  &nbsp;
+  <button (click)="searchFormLines.onClear()" [disabled]="!canSearch()">Clear</button>
+  &nbsp;
+</p>
+
+<app-resultlist>
+
+</app-resultlist>

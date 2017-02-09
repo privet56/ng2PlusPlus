@@ -1,0 +1,9 @@
+<div *ngIf="searchFormLines" style="margin-top:19px;">
+        <app-search-form-line
+            *ngFor="let searchFormLine of searchFormLines"
+            [searchFormLine]="searchFormLine"
+            (typeChanged)="onTypeChanged($event)"
+            (removeCalled)="onRemove($event)"
+            >
+        </app-search-form-line>
+</div>

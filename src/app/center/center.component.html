@@ -1,0 +1,58 @@
+<div id="center">
+
+<p-tabView (onChange)="onTabSelected($event)" #tabView>
+    <p-tabPanel header="Home" [selected]="true" leftIcon="fa-home" #tabPanel> </p-tabPanel>
+    <p-tabPanel header="Search & Reporting" leftIcon="fa-search"> </p-tabPanel>
+    <p-tabPanel header="Add New Collaboration" leftIcon="fa-plus"> </p-tabPanel>
+    <p-tabPanel header="Admin" [disabled]="false" *ngIf="isVisible('admin')" leftIcon="fa-bolt"> </p-tabPanel>
+    <p-tabPanel header=" Info" [disabled]="false" leftIcon="fa-info"> </p-tabPanel>
+</p-tabView>
+
+<div id="centeroutlet" style="overflow-y:auto;height:233px;width:99%;padding-top:9px;padding-left:9px;">
+  <router-outlet></router-outlet>
+</div>
+
+<!--
+<ngb-tabset type="pills">
+  <ngb-tab title="Home">
+    <template ngbTabContent>
+      a
+    </template>
+  </ngb-tab>
+  <ngb-tab>
+    <template ngbTabTitle><b>Search</b></template>
+    <template ngbTabContent>
+      b
+    </template>
+  </ngb-tab>
+  <ngb-tab title="Admin" [disabled]="true">
+    <template ngbTabContent>
+      c
+    </template>
+  </ngb-tab>
+</ngb-tabset>
+
+  <h1 style="width:1099px;background-color:green;">
+    title: {{title}}
+  </h1>
+  <h2>ng bootrap radio:</h2>
+  <div ngbRadioGroup name="radioBasic">
+    <label class="btn btn-primary">
+      <input type="radio" [value]="1"> Left (pre-checked)
+    </label>
+    <label class="btn btn-primary">
+      <input type="radio" value="middle"> Middle
+    </label>
+    <label class="btn btn-primary">
+      <input type="radio" [value]="false"> Right
+    </label>
+  </div>
+
+  <h2>primeng:</h2>
+  <p-progressBar [value]="33"></p-progressBar>
+
+  <h2>bootstrap tooltip:</h2>
+  <div [ngbTooltip]="tooltipText" style="height:133px;">
+      Element text
+  </div> -->
+</div>

@@ -1,0 +1,136 @@
+<s:Envelope xmlns:s="http://www.w3.org/2003/05/soap-envelope" xmlns:a="http://www.w3.org/2005/08/addressing">
+   <s:Header>
+      <a:Action s:mustUnderstand="1">Siemens.UnicoPlus.Lib.DataProvider/IDataProvider/GetCollaborationDetailsResponse</a:Action>
+      <a:RelatesTo>uuid:6feb7551-4c42-4279-a52f-73c31aab6366</a:RelatesTo>
+      <AuthTicket_username xmlns="Siemens.UnicoPlus.Lib.DataProvider">Z0000001</AuthTicket_username>
+      <AuthTicket_gid xmlns="Siemens.UnicoPlus.Lib.DataProvider">[null]</AuthTicket_gid>
+   </s:Header>
+   <s:Body>
+      <GetCollaborationDetailsResponse xmlns="Siemens.UnicoPlus.Lib.DataProvider">
+         <GetCollaborationDetailsResult xmlns:b="Siemens.UnicoPlus.Lib.DataModel" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+            <b:Abstract>To promote Siemens Industry as a promoter of technology developpement</b:Abstract>
+            <b:Acronym i:nil="true"/>
+            <b:Attachments/>
+            <b:BudgetYearSlices/>
+            <b:CanUserEditCollaboration>false</b:CanUserEditCollaboration>
+            <b:Children/>
+            <b:CollaborationTypeID>11000</b:CollaborationTypeID>
+            <b:CollaborationTypeName>Sponsorings / Donations / Other contributions</b:CollaborationTypeName>
+            <b:Comment>Detail information about sponsoring: PLATFORM_UNIVERSITY, Ecole Supérieur Algérienne des Affaires, Alger</b:Comment>
+            <b:ConnectedCollaborations i:nil="true"/>
+            <b:ConsortiumBudget i:nil="true"/>
+            <b:CourseOfStudies i:nil="true"/>
+            <b:CurrencyBudgets i:nil="true"/>
+            <b:EndTime>2013-05-19T00:00:00</b:EndTime>
+            <b:Evaluation i:nil="true"/>
+            <b:EvaluationConclusion i:nil="true"/>
+            <b:FundedBudget i:nil="true"/>
+            <b:FundingBodies/>
+            <b:FundingProgramCountry i:nil="true"/>
+            <b:FundingProgramID i:nil="true"/>
+            <b:FundingProgramName i:nil="true"/>
+            <b:FundingReferenceNumber i:nil="true"/>
+            <b:GTFID i:nil="true"/>
+            <b:GTFName i:nil="true"/>
+            <b:HasPlannedData>false</b:HasPlannedData>
+            <b:ID>8527</b:ID>
+            <b:IndustrialPartners/>
+            <b:Institutions>
+               <b:Institution>
+                  <b:ID>2466</b:ID>
+                  <b:Name>École nationale polytechnique d'Alger</b:Name>
+                  <b:ChairOfFaculty i:nil="true"/>
+                  <b:City>Alger</b:City>
+                  <b:Comment i:nil="true"/>
+                  <b:CountryID>4</b:CountryID>
+                  <b:CountryName>Algeria</b:CountryName>
+                  <b:DUNS i:nil="true"/>
+                  <b:EnabledStatus>0</b:EnabledStatus>
+                  <b:Faculty i:nil="true"/>
+                  <b:HomepageURL>http://www.enp.edu.dz/</b:HomepageURL>
+                  <b:IFA i:nil="true"/>
+                  <b:InstitutionContacts/>
+                  <b:InstitutionKeywords>ENP</b:InstitutionKeywords>
+                  <b:InstitutionLinks/>
+                  <b:InstitutionTypeID>1000</b:InstitutionTypeID>
+                  <b:InstitutionTypeName>University</b:InstitutionTypeName>
+                  <b:IsMain>true</b:IsMain>
+                  <b:IsReviewed>true</b:IsReviewed>
+                  <b:IsStructuralNode>false</b:IsStructuralNode>
+                  <b:NrSubsidiaries>0</b:NrSubsidiaries>
+                  <b:PartOf i:nil="true"/>
+                  <b:PartOfName i:nil="true"/>
+                  <b:PrivilegeID i:nil="true"/>
+                  <b:PrivilegeName i:nil="true"/>
+                  <b:RivisingTime>2011-07-08T16:36:48.823</b:RivisingTime>
+                  <b:SourceID i:nil="true"/>
+                  <b:StateID>750</b:StateID>
+                  <b:StateName>Alger</b:StateName>
+                  <b:Street>10, Avenue Hassen Badi, BP 182 El-Harrach</b:Street>
+                  <b:ZipCode>16200</b:ZipCode>
+               </b:Institution>
+            </b:Institutions>
+            <b:InternalBudget i:nil="true"/>
+            <b:IsEuroBudget>true</b:IsEuroBudget>
+            <b:IsFrameworkProject>false</b:IsFrameworkProject>
+            <b:IsOngoing>false</b:IsOngoing>
+            <b:IsReviewed>true</b:IsReviewed>
+            <b:Keywords>sponsoring</b:Keywords>
+            <b:LastRevisor>Burger,  Manfred (Z0004FIL)</b:LastRevisor>
+            <b:NameOfChair i:nil="true"/>
+            <b:NrOfConnectedCollaborations i:nil="true"/>
+            <b:OriginalConsortiumBudget i:nil="true"/>
+            <b:OriginalFundedBudget i:nil="true"/>
+            <b:OriginalInternalBudget i:nil="true"/>
+            <b:OriginalSiemensBudget i:nil="true"/>
+            <b:OriginatingTime>2014-01-23T17:56:50.96</b:OriginatingTime>
+            <b:Originator>Seefeld,  Helge (ZZZZZOPZ)</b:Originator>
+            <b:Owner>Seefeld,  Helge (ZZZZZOPZ)</b:Owner>
+            <b:PartOf i:nil="true"/>
+            <b:PartOfTitle i:nil="true"/>
+            <b:PlannedData i:nil="true"/>
+            <b:Publications/>
+            <b:ResearchAreas/>
+            <b:RivisingTime>2014-08-11T15:34:14.327</b:RivisingTime>
+            <b:SiemensBUAbbrev i:nil="true"/>
+            <b:SiemensBUID i:nil="true"/>
+            <b:SiemensBUName i:nil="true"/>
+            <b:SiemensBudget i:nil="true"/>
+            <b:SiemensContacts>
+               <b:SiemensContact>
+                  <b:ID>23981</b:ID>
+                  <b:Name>BOUMEDIENE</b:Name>
+                  <b:FirstName>MERIEM</b:FirstName>
+                  <b:Title i:nil="true"/>
+                  <b:CountryCode>DZ</b:CountryCode>
+                  <b:CountryID>4</b:CountryID>
+                  <b:CountryName>Algeria</b:CountryName>
+                  <b:Department>RC-DZ CC</b:Department>
+                  <b:EMail>meriem.boumediene@siemens.com</b:EMail>
+                  <b:GID>Z000JKPY</b:GID>
+                  <b:IsMain>true</b:IsMain>
+                  <b:OrgUnit>CC</b:OrgUnit>
+                  <b:Organization>SIEMENS ALGERIA</b:Organization>
+                  <b:SequenceNr>1</b:SequenceNr>
+                  <b:TelephoneNumber>+213 (21) 946-300</b:TelephoneNumber>
+               </b:SiemensContact>
+            </b:SiemensContacts>
+            <b:SiemensDivisionAbbrev i:nil="true"/>
+            <b:SiemensDivisionID i:nil="true"/>
+            <b:SiemensDivisionName i:nil="true"/>
+            <b:SiemensSectorAbbrev>I</b:SiemensSectorAbbrev>
+            <b:SiemensSectorID>3</b:SiemensSectorID>
+            <b:SiemensSectorName>Industry</b:SiemensSectorName>
+            <b:Source>SpoDoM</b:Source>
+            <b:SourceID>165997</b:SourceID>
+            <b:StartTime>2013-05-17T00:00:00</b:StartTime>
+            <b:StatusID>4000</b:StatusID>
+            <b:StatusName>completed</b:StatusName>
+            <b:StudentFirstName i:nil="true"/>
+            <b:StudentLastName i:nil="true"/>
+            <b:Title>Startup Weekend Alger 2013</b:Title>
+            <b:TitleInOtherLanguage i:nil="true"/>
+         </GetCollaborationDetailsResult>
+      </GetCollaborationDetailsResponse>
+   </s:Body>
+</s:Envelope>

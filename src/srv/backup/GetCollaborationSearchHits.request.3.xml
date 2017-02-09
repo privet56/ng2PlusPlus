@@ -1,0 +1,52 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:siem="Siemens.UnicoPlus.Lib.DataProvider">
+   <soap:Header>
+    <AuthTicket xmlns="Siemens.UnicoPlus.Lib.DataProvider">
+	html5client
+    </AuthTicket>
+   </soap:Header>
+   <soap:Body>
+      <siem:GetCollaborationSearchHits>
+
+         <siem:xmlSearchRequest>
+<![CDATA[
+<?xml version="1.0" encoding="UTF-8"?>
+<SearchRequest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <SiemensUnitCondition>
+      <CheckFor type="sector">1245</CheckFor>
+      <CheckFor type="sector">1323</CheckFor>
+      <CheckFor type="sector">228</CheckFor>
+      <CheckFor type="sector">204</CheckFor>
+      <CheckFor type="sector">319</CheckFor>
+      <CheckFor type="sector">1253</CheckFor>
+      <CheckFor type="sector">38</CheckFor>
+      <CheckFor type="sector">1237</CheckFor>
+      <CheckFor type="sector">3</CheckFor>
+      <CheckFor type="sector">432</CheckFor>
+      <CheckFor type="sector">1247</CheckFor>
+      <CheckFor type="sector">1225</CheckFor>
+      <CheckFor type="sector">1233</CheckFor>
+      <CheckFor type="sector">1260</CheckFor>
+      <CheckFor type="sector">506</CheckFor>
+      <CheckFor type="sector">1232</CheckFor>
+   </SiemensUnitCondition>
+   <CooperationTypeCondition>
+      <CheckFor>1000</CheckFor>
+      <CheckFor>2000</CheckFor>
+   </CooperationTypeCondition>
+   <CooperationStatusCondition>
+      <CheckFor>1000</CheckFor>
+      <CheckFor>4000</CheckFor>
+   </CooperationStatusCondition>
+   <DurationFYCondition>
+      <CheckFor FromID="35" ToID="35" />
+   </DurationFYCondition>
+</SearchRequest>
+]]>
+	 </siem:xmlSearchRequest>
+
+         <siem:calculateFilterValues>true</siem:calculateFilterValues>
+         <siem:calculateReportResults>true</siem:calculateReportResults>
+
+      </siem:GetCollaborationSearchHits>
+   </soap:Body>
+</soap:Envelope>

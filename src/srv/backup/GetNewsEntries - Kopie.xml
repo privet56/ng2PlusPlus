@@ -1,0 +1,57 @@
+<s:Envelope xmlns:s="http://www.w3.org/2003/05/soap-envelope" xmlns:a="http://www.w3.org/2005/08/addressing">
+   <s:Header>
+      <a:Action s:mustUnderstand="1">Siemens.UnicoPlus.Lib.DataProvider/IDataProvider/GetNewsEntriesResponse</a:Action>
+      <a:RelatesTo>uuid:75862a66-b632-40d3-8588-2fa061ce49cc</a:RelatesTo>
+      <AuthTicket_username i:nil="true" xmlns="Siemens.UnicoPlus.Lib.DataProvider" xmlns:i="http://www.w3.org/2001/XMLSchema-instance"/>
+      <AuthTicket_gid xmlns="Siemens.UnicoPlus.Lib.DataProvider">[null]</AuthTicket_gid>
+   </s:Header>
+   <s:Body>
+      <GetNewsEntriesResponse xmlns="Siemens.UnicoPlus.Lib.DataProvider">
+         <GetNewsEntriesResult xmlns:b="Siemens.UnicoPlus.Lib.DataModel" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+            <b:NewsEntry>
+               <b:ID>52</b:ID>
+               <b:Name>test final</b:Name>
+               <b:Date>2016-07-14T08:31:35.633</b:Date>
+               <b:Description/>
+            </b:NewsEntry>
+            <b:NewsEntry>
+               <b:ID>51</b:ID>
+               <b:Name>Test neu</b:Name>
+               <b:Date>2016-07-07T09:18:02.713</b:Date>
+               <b:Description>Test neu für hyperlinks
+
+https://intranet.for.siemens.com/cms/ct/de/ueber_corporate_technology/university_relations/Pages/home.aspx</b:Description>
+            </b:NewsEntry>
+            <b:NewsEntry>
+               <b:ID>50</b:ID>
+               <b:Name>Test 3 News Inga</b:Name>
+               <b:Date>2016-06-15T09:49:46.617</b:Date>
+               <b:Description>Test für Email Adressen
+
+Inga.zins@siemens.com
+
+Ingazins@gmx.de</b:Description>
+            </b:NewsEntry>
+            <b:NewsEntry>
+               <b:ID>49</b:ID>
+               <b:Name>test NEws Inga</b:Name>
+               <b:Date>2016-06-14T15:38:41.74</b:Date>
+               <b:Description>Test bzgl. email Adressen
+
+inga.zins@siemens.com
+
+ingazins@gmx.de</b:Description>
+            </b:NewsEntry>
+            <b:NewsEntry>
+               <b:ID>48</b:ID>
+               <b:Name>UNICO+ Training 19.7.16</b:Name>
+               <b:Date>2016-06-14T15:07:01.27</b:Date>
+               <b:Description>Register at https://events.siemens.com/rd/Default.aspx?9a46588093bbedff83ff4377c8294ba3-4881
+
+Best regards
+Katharina</b:Description>
+            </b:NewsEntry>
+         </GetNewsEntriesResult>
+      </GetNewsEntriesResponse>
+   </s:Body>
+</s:Envelope>

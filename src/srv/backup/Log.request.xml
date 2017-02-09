@@ -1,0 +1,14 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:siem="Siemens.UnicoPlus.Lib.DataProvider">
+   <soap:Header>
+    <AuthTicket xmlns="Siemens.UnicoPlus.Lib.DataProvider">
+	html5client
+    </AuthTicket>
+   </soap:Header>
+   <soap:Body>
+      <siem:Log>
+         <siem:activity>TEST 40</siem:activity>
+         <siem:activityDetails>TEST_DETAILS 40</siem:activityDetails>
+         <siem:searchRequest>TEST SEARCHREQUEST XML MAX</siem:searchRequest>
+      </siem:Log>
+   </soap:Body>
+</soap:Envelope>

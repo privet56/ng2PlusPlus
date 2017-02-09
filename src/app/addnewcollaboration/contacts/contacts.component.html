@@ -1,0 +1,39 @@
+<div>
+  <table style="margin-left:9px;margin-top:6px;">
+    <tr *ngFor="let contact of contacts; let i = index" style="background-color:#f2f2f2;border-bottom: 7px solid white;" class="ngfor">
+      <td style="width:6px;background-color:white;vertical-align:center;border-left: 1px solid #ddd;">
+      </td>
+      <td>
+        <table>
+          <tr>
+            <td class="firsttd">{{i > 0 ? 'Further' : 'Main' }} Contact
+              <button *ngIf="i > 0" pButton type="button" (click)="onRemove(contact, i)" label="x"
+                style="margin-top:0px;color:red;background:none !important;background-color:#f2f2f2 !important;border-color:#f2f2f2;font-weight:bold;font-size:11px;"
+                class="ui-button-text-icon-left"
+                icon2="fa-close" pTooltip="Remove this contact" tooltipPosition="top"></button>
+
+            </td>
+          </tr>
+          <tr>
+            <td class="firsttd">
+              Name (Last, First):<sup class="necessary">*</sup> 
+             </td>
+            <td style="white-space:nowrap;">
+              <input type="text" class="contactsname" required name="contact.contactnamelast" [(ngModel)]="contact.contactnamelast" pattern="[A-Za-z]{1,999}">
+              , &nbsp;
+              <input type="text" class="contactsname" required name="contact.contactnamefirst" [(ngModel)]="contact.contactnamefirst" pattern="[A-Za-z]{1,999}">
+
+              <button (click)="onSCD()">SCD</button>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+
+  <div style="margin-left:11px;">
+    <a href="#" style="color:white !important;margin-left:1px;" (click)="addFurtherContact($event)"> <img src="assets/arrowInternal.png" /> </a>
+    Add further contact
+  </div>
+  
+</div>

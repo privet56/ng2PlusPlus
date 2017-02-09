@@ -1,0 +1,36 @@
+<div style="padding-top:11px;padding-bottom:6px;">
+  <h3>Admin Functions:</h3>
+</div>
+
+<p-panel [toggleable]="true" [collapsed]="false">
+      <header>
+        <div class="ui-helper-clearfix">
+            <span class="ui-panel-title" style="font-size:16px;display:inline-block;margin-top:2px"><strong>News</strong> Editor</span>
+            <button pButton style="float:right;min-width:75px;" label="Save" icon="fa-check" pTooltip="Save" tooltipPosition="top" (click)="onNewsSave()"
+                ></button>
+        </div> 
+      </header>
+    <div style="min-height:99px;background-color:white;">
+        <table style="width:100%;"><tr><td style="vertical-align:top;height:100%;width:50%">
+            <!-- no height ==} link button does not work!!!  -->
+            <p-editor [(ngModel)]="newsText" [style]="{'width':'100%','height':'133px','background-color':'white'}"></p-editor>
+            <button pButton type="button" label=" Clear" icon="fa-close" (click)="newsText=null" style="min-width:75px;"></button>
+        </td><td style="vertical-align:top;height:100%;width:50%">
+            <p-fieldset legend="HTML Source" toggleable="true" [style]="{'width':'100%','height':'100%'}">
+            {{newsText}}
+            </p-fieldset>
+        </td></tr></table>
+    </div>
+</p-panel>
+<div class="spdiv"></div>
+<p-panel header="Second Function" [toggleable]="true" [collapsed]="true">
+    <div style="min-height:99px;background-color:white;width:100%;height:100%;">
+        //TODO
+    </div>
+</p-panel>
+<div class="spdiv"></div>
+<p-panel header="Third Function" [toggleable]="true" [collapsed]="true">
+    <div style="min-height:99px;background-color:white;width:100%;height:100%;">
+        //TODO
+    </div>
+</p-panel>

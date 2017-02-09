@@ -1,0 +1,18 @@
+.cell
+{
+    /*overflow-y:auto;*/
+    white-space:normal;
+}
+.column_id/*thead:nth-child(1)*/
+{
+    background-color: green !important;
+}
+/*.ui-datatable-resizable thead th, .ui-datatable-resizable tbody td, .ui-datatable-resizable tfoot td
+{
+    white-space: nowrap !important;
+}
+.ui-inputswitch-on      does not work here -> move to styles.css
+{
+    background:none !important;
+    background-color: red !important;
+}*/

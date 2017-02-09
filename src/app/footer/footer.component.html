@@ -1,0 +1,26 @@
+<footer class="footer bd-footer text-muted headerfooter" id="footer">
+  <div class="container" style="margin-left:0px">
+    <p class="text-muted">
+      &copy; Siemens AG 2010-2016 - Corporate Information
+      |
+      <a #privacyPolicy href="http://www.siemens.com/corp/en/index/privacy.htm" style="font-size:11px;" target="_new">Privacy Policy</a>
+      |
+      <a #termsOfUse href="http://www.siemens.com/corp/en/index/terms_of_use.htm" style="font-size:11px;" target="_new">Terms of Use</a>
+      |
+      <a #digitalID href="http://www.siemens.com/corp/en/index/digital_id.htm" style="font-size:11px;" target="_new">Digital ID</a>
+    </p>
+
+    <div style="position:abolute;bottom:0px;text-align:right;">
+      <ng2-floating-button 
+        [placement]="config.placment" 
+        [effect]="config.effect" 
+        [label]="config.label" 
+        [iconClass]="config.iconClass" 
+        [activeIconClass]="config.activeIconClass"
+        [toggle]="config.toggle"
+        [buttons]="buttons">
+      </ng2-floating-button>
+    </div>
+
+  </div>
+</footer>

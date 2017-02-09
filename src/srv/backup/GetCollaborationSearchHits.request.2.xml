@@ -1,0 +1,21 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:siem="Siemens.UnicoPlus.Lib.DataProvider">
+   <soap:Header>
+    <AuthTicket xmlns="Siemens.UnicoPlus.Lib.DataProvider">
+	html5client
+    </AuthTicket>
+   </soap:Header>
+   <soap:Body>
+      <siem:GetCollaborationSearchHits>
+
+         <siem:xmlSearchRequest>
+<![CDATA[
+<?xml version="1.0" encoding="UTF-8"?><SearchRequest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><CooperationTypeCondition><CheckFor exclude="true">2000</CheckFor></CooperationTypeCondition></SearchRequest>
+]]>
+	 </siem:xmlSearchRequest>
+
+         <siem:calculateFilterValues>true</siem:calculateFilterValues>
+         <siem:calculateReportResults>true</siem:calculateReportResults>
+
+      </siem:GetCollaborationSearchHits>
+   </soap:Body>
+</soap:Envelope>

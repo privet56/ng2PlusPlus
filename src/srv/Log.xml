@@ -1,0 +1,12 @@
+<s:Envelope xmlns:s="http://www.w3.org/2003/05/soap-envelope" xmlns:a="http://www.w3.org/2005/08/addressing">
+   <s:Header>
+      <a:Action s:mustUnderstand="1">Siemens.UnicoPlus.Lib.DataProvider/IDataProvider/LogResponse</a:Action>
+      <AuthTicket_username xmlns="Siemens.UnicoPlus.Lib.DataProvider">Z0000001</AuthTicket_username>
+      <AuthTicket_gid xmlns="Siemens.UnicoPlus.Lib.DataProvider">[null]</AuthTicket_gid>
+   </s:Header>
+   <s:Body>
+      <LogResponse xmlns="Siemens.UnicoPlus.Lib.DataProvider">
+         <LogResult>20098</LogResult>
+      </LogResponse>
+   </s:Body>
+</s:Envelope>

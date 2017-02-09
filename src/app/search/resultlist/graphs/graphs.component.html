@@ -1,0 +1,14 @@
+<div #collaborationdistribution id="collaborationdistributionid">
+  <div>
+    <h4 style="margin-top:33px;">Collaboration distribution:</h4>
+    <button (click)="onPDF(collaborationdistribution)" class="button_pdf" pTooltip="Export as PDF" tooltipPosition="top">
+      <img src="assets/file_pdf.png"/>
+    </button>
+    <br>
+    <app-graph *ngFor="let data of datas; let i = index" [data]="data" [datasIndex]="i">
+    </app-graph>
+    <h5 *ngIf="datas.length < 1" style="text-align:center;margin-top:99px;">
+      No charts available.
+    </h5>
+  </div>
+</div>

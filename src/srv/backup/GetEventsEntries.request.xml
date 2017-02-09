@@ -1,0 +1,12 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:siem="Siemens.UnicoPlus.Lib.DataProvider">
+   <soap:Header>
+    <AuthTicket xmlns="Siemens.UnicoPlus.Lib.DataProvider">
+	AuthTicket
+    </AuthTicket>
+   </soap:Header>
+   <soap:Body>
+      <siem:GetEventsEntries>
+         <siem:topN>2</siem:topN>
+      </siem:GetEventsEntries>
+   </soap:Body>
+</soap:Envelope>

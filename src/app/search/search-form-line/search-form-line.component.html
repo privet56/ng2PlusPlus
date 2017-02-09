@@ -1,0 +1,78 @@
+<div style="float:initial;dummy:dd" class="ngfor">
+<table><tr>
+    <td>
+    <!-- 1: type -->
+    <!-- pTooltip="Choose Type" tooltipPosition="right" -->
+    <!-- if([editable]="false") => first item selected as default -->
+    <p-dropdown [options]="types"
+                [(ngModel)]="type"
+                (onChange)="onTypeChanged($event)"
+                [style]="{'width':'150px'}"              
+                [editable]="true"
+                filter="filter"
+                >
+        <template let-type>
+            <div class="ui-helper-clearfix" style="height: 25px;">
+                <div style="font-size:14px;float:right;margin-top:4px;white-space:nowrap;"
+                    >{{type.label}}</div>
+            </div>
+        </template>
+    </p-dropdown>
+    </td>
+    <td *ngIf="values && values.length" style="padding-top:5px;">
+    <!-- 2:a: multiselect -->
+    <p-multiSelect [options]="values"
+                [(ngModel)]="valuesSelected"
+                (onChange)="onValueChanged($event)"
+                [style]="{'width':'150px'}"
+                editable="true"
+                filter="filter">
+        <template let-value>
+            <div class="ui-helper-clearfix" style="height: 25px;">
+                <div style="font-size:14px;float:right;margin-top:4px">{{value.label}}</div>
+            </div>
+        </template>
+    </p-multiSelect>
+    </td>
+    <td *ngIf="type && values && !values.length">
+    <!-- 2:b: edit -->
+    <input type="text"
+        pInputText
+        style="width:150px;float:left;margin-left:0px;height:26px;"
+        [(ngModel)]="value"
+        (keyup)="onValueChanged($event)"
+        pTooltip="Enter free form search" tooltipPosition="top">
+    </td>
+    <!-- and/or/not -->
+    <td *ngIf="type">
+    <p-dropdown [options]="getBooleanOperators()"
+                [(ngModel)]="booleanOperator"
+                [style]="{'width':'79px'}"
+                [editable]="false"
+                [disabled]="getBooleanOperators().length < 2"
+                >
+        <template let-booleanOperator>
+            <div class="ui-helper-clearfix" style="height: 25px;">
+                <div style="font-size:14px;float:right;margin-top:4px;white-space:nowrap;"
+                    >{{booleanOperator.label}}</div>
+            </div>
+        </template>
+    </p-dropdown>
+    </td>
+    <td *ngIf="type">
+    <!-- 3: remove button -->
+    <button pButton #closeButton type="button" (click)="onRemove()" label="x"
+        style="margin-top:0px;color:red;background:none !important;background-color:white !important;border-color:white;font-weight:bold;font-size:16px;"
+        class="ui-button-text-icon-left ui-button-text"
+        icon2="fa-close" pTooltip="Remove this line" tooltipPosition="top"></button>
+    </td>
+    <td *ngIf="!type">
+    <!-- 3: help button -->
+    <a href="#" style="color:white !important;margin-left:9px;" (click)="onHelp();"> 
+            <img src="assets/help_A.gif" alt="Help" title="Help" />
+     </a>
+    </td>
+
+</tr></table>
+
+</div>
