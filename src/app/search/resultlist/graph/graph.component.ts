@@ -344,6 +344,12 @@ export class GraphComponent implements OnInit
   {
 //TODO:    
     console.log("graph:drop("+this.getTitle()+"):"+data);
+
+    let summary:string = "TODO";
+    let detail:string = "On item '"+this.getTitle()+"' was dropped!";
+
+    this.msgService.inf(summary, detail);
+
     this.isDragged  = false;
     this.isDropOver = false;
   }
