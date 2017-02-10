@@ -12,7 +12,7 @@ export class SaniPipe
 
    }
 
-  transform(value: string, limit : number) : SafeHtml
+  transform(value: string) : SafeHtml
   {
     if(!value)return value;
     return this._sanitizer.bypassSecurityTrustHtml(value);

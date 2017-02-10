@@ -1,6 +1,6 @@
 # WebApp: ng2PlusPlus
-# with Angular 2.x & PrimeNG
-# language: TypeScript, JavaScript
+## with Angular 2.x & PrimeNG
+## language: TypeScript, JavaScript
 
 GUI :
 #####
