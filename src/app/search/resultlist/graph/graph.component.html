@@ -1,8 +1,10 @@
 <!-- pdf-generator has problems with float:left (height not possible) -->
 <!-- div #graphdiv style="padding: 9px; margin: 9px; background-color:#e6e6e6; height:333px;width:266px;float:left" -->
-<div #graphdiv style="padding: 9px; margin: 9px; background-color:#e6e6e6; height:333px;width:266px;display:inline-block;">
+<div #graphdiv
+    style="padding: 9px; margin: 9px; background-color:#e6e6e6; height:333px;width:266px;display:inline-block;">
     <!-- p-chart #chart type="line" [data]="data"></p-chart -->
-    <h4 style="text-align:center;">{{ getTitle() }} ({{ total }})</h4>
+    <h4 style="text-align:center;"
+        pDraggable="chartsDD" dragHandle=".ui-panel-titlebar" (onDragStart)="dragStart($event,data)" (onDragEnd)="dragEnd($event)">{{ getTitle() }} ({{ total }})</h4>
     <button (click)="onPDF(graphdiv)" class="button_pdf" pTooltip="Export as PDF" tooltipPosition="top">
         <img src="assets/file_pdf.png"/>
     </button><br>

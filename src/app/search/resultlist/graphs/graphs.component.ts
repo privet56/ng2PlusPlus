@@ -47,4 +47,17 @@ export class GraphsComponent implements OnInit
     UJsUtil.doPDF(div, fn, true);
     return false;
   }
+//d&d
+  public dragStart($event,data):void
+  {
+    console.log("graphs:dragStart");
+  }
+  public dragEnd($event):void
+  {
+    console.log("graphs:dragEnd");
+  }
+  public drop(event):void
+  {
+    console.log("graphs:drop");    
+  }
 }

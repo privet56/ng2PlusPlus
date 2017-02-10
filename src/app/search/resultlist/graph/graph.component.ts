@@ -319,4 +319,17 @@ export class GraphComponent implements OnInit
     UJsUtil.doPDF(div, fn, false);
     return false;
   }
+//d&d
+  public dragStart($event,data):void
+  {
+    console.log("graph:dragStart");
+  }
+  public dragEnd($event):void
+  {
+    console.log("graph:dragEnd");
+  }
+  public drop(event):void
+  {
+    console.log("graph:drop");    
+  }
 }

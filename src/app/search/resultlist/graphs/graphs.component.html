@@ -4,9 +4,12 @@
     <button (click)="onPDF(collaborationdistribution)" class="button_pdf" pTooltip="Export as PDF" tooltipPosition="top">
       <img src="assets/file_pdf.png"/>
     </button>
-    <br>
-    <app-graph *ngFor="let data of datas; let i = index" [data]="data" [datasIndex]="i">
-    </app-graph>
+    <div pDroppable="chartsDD" (onDrop)="drop($event)">
+      <app-graph *ngFor="let data of datas; let i = index" [data]="data" [datasIndex]="i"
+        >
+        <!-- pDraggable="chartsDD" dragHandle=".ui-panel-titlebar" (onDragStart)="dragStart($event,data)" (onDragEnd)="dragEnd($event)"-->
+      </app-graph>
+    </div>
     <h5 *ngIf="datas.length < 1" style="text-align:center;margin-top:99px;">
       No charts available.
     </h5>

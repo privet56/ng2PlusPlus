@@ -9,7 +9,7 @@ import { UnicoRoutingModule } from './app-routing.module';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-import { ChartModule, InputSwitchModule, DialogModule, FieldsetModule, EditorModule, PanelModule, GrowlModule, ConfirmationService, MessagesModule, ConfirmDialogModule, TooltipModule, DataTableModule,SharedModule, MultiSelectModule, ButtonModule, InputTextModule, DropdownModule, TabViewModule, TabPanel } from 'primeng/primeng';
+import { DragDropModule, ChartModule, InputSwitchModule, DialogModule, FieldsetModule, EditorModule, PanelModule, GrowlModule, ConfirmationService, MessagesModule, ConfirmDialogModule, TooltipModule, DataTableModule,SharedModule, MultiSelectModule, ButtonModule, InputTextModule, DropdownModule, TabViewModule, TabPanel } from 'primeng/primeng';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { WsCallHistoryComponent } from './header/ws-call-history/ws-call-history.component';
