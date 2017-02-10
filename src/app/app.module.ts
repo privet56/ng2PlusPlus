@@ -9,7 +9,8 @@ import { UnicoRoutingModule } from './app-routing.module';
 
 import { NgbModule, NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 
-import { DragDropModule, ChartModule, InputSwitchModule, DialogModule, FieldsetModule, EditorModule, PanelModule, GrowlModule, ConfirmationService, MessagesModule, ConfirmDialogModule, TooltipModule, DataTableModule,SharedModule, MultiSelectModule, ButtonModule, InputTextModule, DropdownModule, TabViewModule, TabPanel } from 'primeng/primeng';
+import { Draggable, Droppable, DragDropModule, ChartModule, InputSwitchModule, DialogModule, FieldsetModule, EditorModule, PanelModule, GrowlModule, ConfirmationService, MessagesModule, ConfirmDialogModule, TooltipModule, DataTableModule,SharedModule, MultiSelectModule, ButtonModule, InputTextModule, DropdownModule, TabViewModule, TabPanel } from 'primeng/primeng';
+//...and don't forget the imports below
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { WsCallHistoryComponent } from './header/ws-call-history/ws-call-history.component';
@@ -69,7 +70,8 @@ import { HttpCallsServiceService } from './services/http-calls-service.service';
   ],
   imports: [
     NgbModule.forRoot(),
-    ChartModule,    
+    DragDropModule,
+    ChartModule,
     DialogModule,
     InputSwitchModule,
     FieldsetModule,

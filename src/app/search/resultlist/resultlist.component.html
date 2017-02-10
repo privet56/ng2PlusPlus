@@ -3,14 +3,18 @@
   <table>
     <tr>
       <td><h3>Analysis results:</h3></td>
-      <td style="padding-left: 33px;">
+      <!-- wrong pTooltip position within a scrollable area? use #tooltipParent & [appendTo]="tooltipParent" -->
+      <td style="padding-left: 33px;position:relative;" #tooltipParent>
           <!-- TODO: insert pic onto the switch -->
           <!-- alternative: SelectButton -->
+          
           <p-inputSwitch [(ngModel)]="showGraph"
             onLabel= " &nbsp; &nbsp; Graph &nbsp; &nbsp; "
             offLabel=" &nbsp; &nbsp; Hits &nbsp; &nbsp; "
             (onChange)="onShowGraph($event)"
-            pTooltip="Switch Graph / Hitlist Display!" tooltipPosition="right">
+            pTooltip="Switch Graph / Hitlist Display!" tooltipPosition="right"
+            [appendTo]="tooltipParent">
+            
           </p-inputSwitch>
       </td>
     </tr>

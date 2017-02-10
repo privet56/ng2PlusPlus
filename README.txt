@@ -28,12 +28,16 @@ Before running the tests make sure you are serving the app via `ng serve`.
 	$ ncu.cmd --upgradeAll					//possibly you need to paste the absolute path
 	$ npm install							//'ng serve' & VSCode should NOT run
 	$ npm outdated							//check if succeeded
+	$ check if fixes necessary				//eg. below fix for pTooltip
+	$ git commit & 'git push origin master'
 
 ## would you like to use primeng pTooltip with html? Fix source code: .\ng2PlusPlus\unico\node_modules\primeng\components\tooltip\tooltip.js , ca. line 90
         tooltipText.className = 'ui-tooltip-text ui-shadow ui-corner-all';
         //tooltipText.appendChild(document.createTextNode(this.text));		//deactivate:-
 		tooltipText.innerHTML = this.text;									//insert:+
 
+## known bugs:
+	- primeng pTooltip position is wrong within a scrollable area (& [appendTo] doesn't always help) ... use bootstrap (with code in index.html)?
 
 ## styling:
 1) edit styles.css with the hints on http://www.primefaces.org/primeng/#/theming

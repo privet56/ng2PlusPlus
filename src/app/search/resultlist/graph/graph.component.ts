@@ -320,16 +320,31 @@ export class GraphComponent implements OnInit
     return false;
   }
 //d&d
+  public isDragged :boolean = false;
+  public isDropOver:boolean = false;
   public dragStart($event,data):void
   {
-    console.log("graph:dragStart");
+    //console.log("graph:dragStart("+this.getTitle()+"):"+data);
+    //console.log(data);
+    this.isDragged = true;
   }
-  public dragEnd($event):void
+  public dragEnd($event,data):void
   {
-    console.log("graph:dragEnd");
+    this.isDragged = false;
   }
-  public drop(event):void
+  public dragEnter($event,data):void
   {
-    console.log("graph:drop");    
+    this.isDropOver = true;
+  }
+  public dragLeave($event,data):void
+  {
+    this.isDropOver = false;
+  }
+  public drop(event,data):void
+  {
+//TODO:    
+    console.log("graph:drop("+this.getTitle()+"):"+data);
+    this.isDragged  = false;
+    this.isDropOver = false;
   }
 }
