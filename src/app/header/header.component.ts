@@ -125,7 +125,7 @@ export class HeaderComponent implements OnInit, AfterViewInit
     let txt : string = `
       <h3>Here you can get information about UNICO++!</h3>
       <div style='padding-top:6px;padding-bottom:6px;'>
-      <div class='linkdiv'><a href="assets/QuickStartGuide_UnicoPlus.pdf" target='_new'>
+      <div class='linkdiv'><a href="assets/QuickStartGuide_UnicoPlus.pdf" target='_new' data-toggle="tooltip" title="<span style='color:red;'>Open PDF in new window...</span>">
         `+imgs+`
         UNICO++ manual
       </a></div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/core';
 import { DlgService } from '../services/dlg.service';
 import { CfgService } from '../services/cfg.service';
@@ -25,7 +25,7 @@ import { UStrUtil } from '../shared/uStrUtil';
     ])
   ]
 })
-export class HomeComponent implements OnInit
+export class HomeComponent implements OnInit, AfterViewInit
 {
   public news : any = { };
   public event : any = { };
@@ -77,5 +77,9 @@ export class HomeComponent implements OnInit
     let header : string = title;//text.substring(text.lastIndexOf('_')+1).toUpperCase();
     this.dlgService.showDlgMsg(txt, header, null, null);
     return false;
-  }  
+  }
+  ngAfterViewInit() : void
+  {
+    //$(document).tooltip();
+  }
 }

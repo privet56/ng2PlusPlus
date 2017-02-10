@@ -14,8 +14,21 @@
         <h2>Tools and Services</h2>
         <div class="ui-corner-all homebox homeboxbottomline">
           <table>
-            <tr><td class="tdlinklist"> <a href="#" class="homelink" target="_new"> <img src="./assets/arrowExternal.png" alt=""> &nbsp; UniSearch </a> </td></tr>
-            <tr><td class="tdlinklist"> <a href="#" class="homelink" target="_new"> <img src="./assets/arrowExternal.png" alt=""> &nbsp; SpoDoM </a> </td></tr>
+            
+            <tr>
+              <td class="tdlinklist">
+                <!--
+                  primeng:        pTooltip                          cannot html starting from 2.4.6 -> fix in README.md
+                  bootstrap:                                        cannot handle dynamically later generated content
+                  ng-bootstrap:   [ngbTooltip]="'tipContent'"       tooltip has a wrong position
+                  $(document).tooltip();                            jQuery UI not in project
+                  bindEventToNewElement                             in index.html: Detecting Dynamically Added Elements With jQuery   -use bootstrap-tooltip->  data-toggle="tooltip" title="<span style='color:red;'>Hooray!</span>"
+                                                                      (deactivated to make the app faster!)
+                -->
+                <a href="#" class="homelink" target="_new"
+                data-toggle="tooltip" title="UniSearch"> <img src="./assets/arrowExternal.png" alt=""> &nbsp; UniSearch! </a> </td></tr>
+            <tr><td class="tdlinklist"> <a href="#" class="homelink" target="_new"
+                pTooltip="<span style='color:green'>SpoDoM</span>"> <img src="./assets/arrowExternal.png" alt=""> &nbsp; SpoDoM </a> </td></tr>
             <tr><td class="tdlinklist"> <a href="#" class="homelink" target="_new"> <img src="./assets/arrowExternal.png" alt=""> &nbsp; OPERA </a> </td></tr>
           </table>
         </div>

@@ -24,5 +24,16 @@
 
 <script src="assets/js/jspdf.min.js" async></script>
 <script src="assets/js/html2canvas.min.js" async></script>
+<script>/*  jquery-bootstrap-tooltip workaround //use better primeng fix as in README.md
+$(document).ready(function()
+{
+  var bindEventToNewElement = function(e)
+  {
+    $('[data-toggle="tooltip"]', e.target).tooltip({html:true});
+  }
+  $("body").on('DOMNodeInserted', bindEventToNewElement);
+  $('[data-toggle="tooltip"]').tooltip({html:true});
+});*/
+</script>
 
 </html>

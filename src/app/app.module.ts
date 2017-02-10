@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 
 import { UnicoRoutingModule } from './app-routing.module';
 
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule, NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 
 import { DragDropModule, ChartModule, InputSwitchModule, DialogModule, FieldsetModule, EditorModule, PanelModule, GrowlModule, ConfirmationService, MessagesModule, ConfirmDialogModule, TooltipModule, DataTableModule,SharedModule, MultiSelectModule, ButtonModule, InputTextModule, DropdownModule, TabViewModule, TabPanel } from 'primeng/primeng';
 import { FooterComponent } from './footer/footer.component';
@@ -68,7 +68,7 @@ import { HttpCallsServiceService } from './services/http-calls-service.service';
     
   ],
   imports: [
-    NgbModule,
+    NgbModule.forRoot(),
     ChartModule,    
     DialogModule,
     InputSwitchModule,
