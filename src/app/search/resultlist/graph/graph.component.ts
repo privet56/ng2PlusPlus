@@ -32,6 +32,7 @@ export class GraphComponent implements OnInit
   ];
 
   @ViewChild('chart') vChart :	ElementRef;
+  @ViewChild('raphdiv') vGraphdiv :	ElementRef;
   @Input() data : any = { };
   @Input() datasIndex : number = -1;
 

@@ -30,5 +30,9 @@
 	border-top-right-radius: 16px;
 	border-bottom-left-radius: 16px;
 	border-bottom-right-radius: 16px;
-    animation: ngfordd 0.3s infinite;
+    animation: ngfordd 0.1s infinite;
+    animation-direction: alternate;
 }
+/* there is no parent selector in css!
+div < div.ui-state-highlight-drag { background-color:red; }
+*/
