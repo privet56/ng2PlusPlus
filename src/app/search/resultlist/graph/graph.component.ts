@@ -2,6 +2,7 @@ import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
 import { UStrUtil } from '../../../shared/uStrUtil';
 import { UJsUtil } from '../../../shared/uJsUtil';
 import { MsgService } from '../../../services/msg.service';
+import { ValueEmitter } from '../../../shared/ValueEmitter';
 
 /*
   <c:ReportingRecordCollaborationType>
@@ -32,9 +33,12 @@ export class GraphComponent implements OnInit
   ];
 
   @ViewChild('chart') vChart :	ElementRef;
-  @ViewChild('raphdiv') vGraphdiv :	ElementRef;
+  @ViewChild('graphdiv') vGraphdiv :	ElementRef;
   @Input() data : any = { };
   @Input() datasIndex : number = -1;
+
+  //@Input() dropHandler:Function = null;
+  @Input() dropHandler:ValueEmitter<number> = null;
 
   public total:number = 0;
 
@@ -325,33 +329,149 @@ export class GraphComponent implements OnInit
   public isDropOver:boolean = false;
   public dragStart($event,data):void
   {
+    if(!this.isDropOver)
+      this.isDragged = true;
     //console.log("graph:dragStart("+this.getTitle()+"):"+data);
-    //console.log(data);
-    this.isDragged = true;
   }
   public dragEnd($event,data):void
   {
     this.isDragged = false;
+    //console.log("graph:dragEnd("+this.getTitle()+"):"+data);
   }
   public dragEnter($event,data):void
   {
-    this.isDropOver = true;
+    if(!this.isDragged)
+      this.isDropOver = true;
+    //console.log("graph:dragEnter("+this.getTitle()+"):"+data);
   }
-  public dragLeave($event,data):void
+  public dragLeave($event:DragEvent,data):void
   {
+    if(!this.isDropOver)return;
+
+    //TODO:.!? how to do it better?
+
+    if($event.srcElement.attributes["name"] && $event.srcElement.attributes["name"].value && $event.srcElement.attributes["name"].value.startsWith("dddiv"))
+    {
+      //console.log("graph:dragLeave isonchild. src:"+$event.srcElement.attributes["name"].value);
+      return;
+    }
+
     this.isDropOver = false;
+    //console.log("graph:dragLeave("+this.getTitle()+") src("+$event.srcElement.tagName+") classList:"+$event.srcElement.classList+" target:"+$event.target+" curTarget:"+$event.currentTarget);
+
+    /*
+    if(!this.isDropOver)return;
+
+    //var x = $event.pageX - $(this.vChart).offset().left;
+    //var y =$event.pageY - $(this.vChart).offset().top;
+
+    var e = $(this.vGraphdiv.nativeElement);
+    var ex = e.offset().left;   //retrieves the current position relative to the document
+    var ey = e.offset().top;
+    var ewidth = e.width();
+    var eheight = e.height();
+
+    //var x = ($event.pageY - ex) + $(window).scrollTop();
+    //var y = ($event.pageY - ey) + $(window).scrollTop();
+
+    if($event.pageY < ey)
+    {
+      console.log("graph:dragLeave mouse is over ele ex:"+ex+" ey:"+ey+" width:"+ewidth+" eheight:"+eheight+" mousey:"+$event.pageY+" mousex:"+$event.pageX);
+      return;
+    }
+    if($event.pageX < ex)
+    {
+      console.log("graph:dragLeave mouse is left of ele ex:"+ex+" ey:"+ey+" width:"+ewidth+" eheight:"+eheight+" mousey:"+$event.pageY+" mousex:"+$event.pageX);
+      return;
+    }
+    if($event.pageY > ey+eheight)
+    {
+      console.log("graph:dragLeave mouse is under ele ex:"+ex+" ey:"+ey+" width:"+ewidth+" eheight:"+eheight+" mousey:"+$event.pageY+" mousex:"+$event.pageX);
+      return;
+    }
+    if($event.pageX > ex+ewidth)
+    {
+      console.log("graph:dragLeave mouse is rights of ele ex:"+ex+" ey:"+ey+" width:"+ewidth+" eheight:"+eheight+" mousey:"+$event.pageY+" mousex:"+$event.pageX);
+      return;
+    }
+    
+    console.log("graph:dragLeave mouse is ON the ele!!! ex:"+ex+" ey:"+ey+" width:"+ewidth+" eheight:"+eheight+" mousey:"+$event.pageY+" mousex:"+$event.pageX);
+    return;
+
+    /*
+    let children:Array<Element> = new Array<Element>();
+    this.traverseChildren(this.vGraphdiv.nativeElement, children);
+    let e:any = $event.toElement || $event.relatedTarget;
+    if (children.indexOf(e))
+    {
+      for(let i:number=0;i<children.length;i++)
+      {
+        //console.log(""+i+"="+children[i].tagName+"="+children[i].getAttribute("name"));
+      }
+
+      var t1:any = $event.target;
+      var target:Element = t1;
+      var targetName = target.attributes["name"] ? target.attributes["name"].value : null;
+      var t2:any = $event.currentTarget;
+      var currentTarget:Element = t2;
+      var currentTargetName = currentTarget.attributes["name"] ? currentTarget.attributes["name"].value : null;
+
+      console.log("graph:dragLeave("+this.getTitle()+") STILLOONCHILD src("+$event.srcElement.tagName+") classList:"+$event.srcElement.classList+" target:"+targetName+" curTarget:"+currentTargetName);
+      return;
+    }
+
+    if($event.srcElement.classList.contains("ui-state-highlight-drop"))
+    {
+      console.log("graph:dragLeave("+this.getTitle()+") STILLOVER src("+$event.srcElement.tagName+") classList:"+$event.srcElement.classList+" target:"+$event.target+" curTarget:"+$event.currentTarget);
+      return;
+    }*/
+
+    //this.isDropOver = false;
+    //console.log("graph:dragLeave("+this.getTitle()+") src("+$event.srcElement.tagName+") classList:"+$event.srcElement.classList+" target:"+$event.target+" curTarget:"+$event.currentTarget);
+    
+/*
+    console.log($event);
+    console.log($event.srcElement);
+    console.log($event.target);
+    console.log($event.currentTarget);*/
+    //console.log(data);
   }
-  public drop(event,data):void
+
+  //MouseEnter and mouseLeave do not fire while a button is pressed
+
+  public mouseOut($event:MouseEvent):void
   {
-//TODO:    
-    console.log("graph:drop("+this.getTitle()+"):"+data);
-
-    let summary:string = "TODO";
-    let detail:string = "On item '"+this.getTitle()+"' was dropped!";
-
-    this.msgService.inf(summary, detail);
-
-    this.isDragged  = false;
+    /*
+    let list:Array<Element> = this.traverseChildren(this.vGraphdiv.nativeElement);
+    let e:any = $event.toElement || $event.relatedTarget;
+    if (list.indexOf(e))
+    {
+        console.log("mouseOut to CHILD --------------------------------------------------------"+this.getTitle());
+        return;
+    }
+    console.log("mouseOut --------------------------------------------------------"+this.getTitle());
+    /*
+    console.log($event.srcElement);
+    console.log($event.target);
+    console.log($event.currentTarget);*/
+    //this.isDropOver = false;
+    /*this.isDragged  = false;
     this.isDropOver = false;
+    console.log("graph:mouseOut("+this.getTitle()+"):");*/
+  }
+  public traverseChildren(e:Element, children:Array<Element>) : void
+  {
+    children.push(e);
+    for(let i:number=0;i<e.children.length;i++)
+    {
+      this.traverseChildren(e.children[i], children);
+    }
+}
+  public drop(event):void
+  {
+    this.dropHandler.emit(1);
+
+    //this.isDragged  = false;
+    //this.isDropOver = false;
   }
 }

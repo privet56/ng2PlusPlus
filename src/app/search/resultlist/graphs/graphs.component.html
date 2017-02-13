@@ -6,7 +6,7 @@
       <img src="assets/file_pdf.png"/>
     </button>
     <div>
-      <app-graph *ngFor="let data of datas; let i = index" [data]="data" [datasIndex]="i">
+      <app-graph *ngFor="let data of datas;trackBy:id; let i = index" [data]="data" [datasIndex]="i" [dropHandler]="onDD">
       </app-graph>
     </div>
     <h5 *ngIf="datas.length < 1" style="text-align:center;margin-top:99px;">
