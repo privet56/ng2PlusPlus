@@ -1,4 +1,4 @@
-import { QueryList, ViewChildren, Component, OnInit, ContentChildren, AfterViewInit } from '@angular/core';
+import { OnDestroy, QueryList, ViewChildren, Component, OnInit, ContentChildren, AfterViewInit } from '@angular/core';
 import { UStrUtil } from '../../../shared/uStrUtil';
 import { UJsUtil } from '../../../shared/uJsUtil';
 import { MsgService } from '../../../services/msg.service';
@@ -10,7 +10,7 @@ import { ValueEmitter } from '../../../shared/ValueEmitter';
   templateUrl: './graphs.component.html',
   styleUrls: ['./graphs.component.css']
 })
-export class GraphsComponent implements OnInit, AfterViewInit
+export class GraphsComponent implements OnInit, AfterViewInit, OnDestroy
 {
   @ViewChildren(GraphComponent) vGraphs : QueryList<GraphComponent>;
   public onDD : ValueEmitter<number> = new ValueEmitter<number>();
@@ -20,6 +20,12 @@ export class GraphsComponent implements OnInit, AfterViewInit
   constructor(private msgService : MsgService)
   {
 
+  }
+
+  ngOnDestroy()
+  {
+    if(this.onDD)  this.onDD.unsubscribe();
+    this.onDD = null;
   }
 
   ngOnInit()
@@ -88,7 +94,7 @@ export class GraphsComponent implements OnInit, AfterViewInit
         let summary:string = "Move";
         let detail:string = "Drag&Drop operation failed.";
         console.log("graphs:onDrop WRN: i2Drop("+i2Drop+") <> iDropInFrontOf("+iDropInFrontOf+")");
-        this.msgService.inf(summary, detail);
+        this.msgService.warn(summary, detail);
         return;
     }
 

@@ -33,6 +33,23 @@
     animation: ngfordd 0.1s infinite;
     animation-direction: alternate;
 }
+@keyframes ngforchartani
+{
+  0%
+  {
+    padding-left: 100px;
+    background-color: aquamarine;
+  }
+  100%
+  {
+    padding-left: 0px;
+  } 
+}
+.ngforchart
+{
+  animation: ngforchartani 1s;
+}
+
 /* there is no parent selector in css!
 div < div.ui-state-highlight-drag { background-color:red; }
 */

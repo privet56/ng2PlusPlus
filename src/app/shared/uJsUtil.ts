@@ -189,4 +189,63 @@ export class UJsUtil
         }
         return imgs;
     }
+
+    public static getAllChildren(e:Element, children:Array<Element>) : void
+    {
+        children.push(e);
+        for(let i:number=0;i<e.children.length;i++)
+        {
+            UJsUtil.getAllChildren(e.children[i], children);
+        }
+    }
+
+    public static isInChildren(nativeE:Element, to:any) : boolean
+    {
+        //let to:any = $event.toElement || $event.relatedTarget;
+        let children:Array<Element> = new Array<Element>();
+        UJsUtil.getAllChildren(nativeE, children);
+        if (children.indexOf(to))
+        {
+            return true;
+        }
+        return false;
+    }
+
+
+    //TODO: untested function!
+    public static isWithinElement(nativeE:Element, pointx:number, pointy:number, debug:boolean) : boolean
+    {
+        var e   = $(nativeE);
+        var ex  = e.offset().left;   //retrieves the current position relative to the document
+        var ey  = e.offset().top;
+        var ewidth  = e.width();
+        var eheight = e.height();
+
+        //TODO: consider scrollpos.!?
+        //var x = ($event.pageY - ex) + $(window).scrollTop();
+        //var y = ($event.pageY - ey) + $(window).scrollTop();
+
+        if(pointy < ey)
+        {
+            if(debug)console.log("isWithinElement mouse is above ele ex:"+ex+" ey:"+ey+" width:"+ewidth+" eheight:"+eheight+" mousey:"+pointy+" mousex:"+pointx);
+            return false;
+        }
+        if(pointx < ex)
+        {
+            if(debug)console.log("isWithinElement mouse is left of ele ex:"+ex+" ey:"+ey+" width:"+ewidth+" eheight:"+eheight+" mousey:"+pointy+" mousex:"+pointx);
+            return false;
+        }
+        if(pointy > ey+eheight)
+        {
+            if(debug)console.log("isWithinElement mouse is under ele ex:"+ex+" ey:"+ey+" width:"+ewidth+" eheight:"+eheight+" mousey:"+pointy+" mousex:"+pointx);
+            return false;
+        }
+        if(pointx > ex+ewidth)
+        {
+            if(debug)console.log("isWithinElement mouse is rights of ele ex:"+ex+" ey:"+ey+" width:"+ewidth+" eheight:"+eheight+" mousey:"+pointy+" mousex:"+pointx);
+            return false;
+        }
+        if(debug)console.log("isWithinElement mouse is WITHIN ele ex:"+ex+" ey:"+ey+" width:"+ewidth+" eheight:"+eheight+" mousey:"+pointy+" mousex:"+pointx);
+        return true;
+    }
 }

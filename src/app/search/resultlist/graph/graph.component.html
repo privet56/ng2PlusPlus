@@ -1,15 +1,15 @@
 <!-- pdf-generator has problems with float:left (height not possible) -->
 <!-- div #graphdiv style="padding: 9px; margin: 9px; background-color:#e6e6e6; height:333px;width:266px;float:left" -->
-<!-- float:left breaks pdf! -->
+<!-- float:left breaks pdf! better: display:inline-block; -->
 <div #graphdiv
     style="padding: 9px; margin: 9px; background-color:#e6e6e6; height:333px;width:266px;display:inline-block;"
-    class="dddiv"
+    class="dddiv ngforchart"
     [ngClass]="{'ui-state-highlight-drag':isDragged, 'ui-state-highlight-drop':isDropOver}"
     (mouseout)='mouseOut($event)'
     name="dd_div1">
     <!-- p-chart #chart type="line" [data]="data"></p-chart -->
     <!-- BREAKS D&D: dragHandle=".move" -->
-    <div name="dd_div2"
+    <div name="dddiv2"
         pDroppable="dddata" pDraggable="dddata"
         dragEffect="move"
         dropEffect="move"
@@ -20,12 +20,14 @@
         (onDragEnter)   ="dragEnter($event, data)"
         (onDragLeave)   ="dragLeave($event, data)"
         >
+        <div name="dddiv2.5">
             <h4 style="text-align:center;" name="dd_div3">
                 {{ getTitle() }} ({{ total }})
             </h4>
             <button (click)="onPDF(graphdiv)" class="button_pdf" pTooltip="Export as PDF" tooltipPosition="top" name="dddiv4">
                 <img src="assets/file_pdf.png"  name="dddiv5" />
             </button>
+        </div>
     </div>
     <p-chart type="pie" [data]="getCharData()" (onDataSelect)="onDataSelected($event)" [options]="getOptions()"></p-chart>
 </div>
