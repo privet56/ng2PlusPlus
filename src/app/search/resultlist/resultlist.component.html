@@ -45,8 +45,8 @@
 			(onRowSelect)="onRowSelect($event)"
        >
 
-      <header><span style="color:orange;margin-left:33px;">{{hitsDesc}}</span></header>
-      <footer><span style="color:orange;margin-left:33px;">{{hitResolvDesc}}</span></footer>
+      <p-header><span style="color:orange;margin-left:33px;" pTooltip="{{hitsDesc}}  {{hitResolvDesc}}">{{hitsDesc}}</span></p-header>
+      <p-footer><span style="color:orange;margin-left:33px;" pTooltip="{{hitsDesc}}  {{hitResolvDesc}}">{{hitResolvDesc}}</span></p-footer>
 
       <!-- ID -->
       <p-column field="id" header="ID" [filter]="true" filterMatchMode="contains" [style]="{'width':'70px'}" sortable="custom" (sortFunction)="sort($event)">

@@ -10,18 +10,19 @@
     (onAfterHide)="onAfterHide($event)"
     [minWidth]=500
     [minHeight]=400
+    class="dlg"
     [width]=500>
     
     <header>
-      <div #dlgHeader [innerHTML]="header">Information</div>    
+      <div #dlgHeader [innerHTML]="header" style="font-weight:bold;font-size:150%;">Information</div>    
     </header>
 
     <div #dlgContent [innerHTML]="content | sani"  *ngIf="!childComponentRef"
-      style="background-color:#f7f9fc;vertical-align:middle;text-align:left;min-height:150px;max-height:500px;">&nbsp;
+      class="dlgContent">&nbsp;
     </div>
 
     <div [hidden]="!childComponentRef"
-      style="background-color:#f7f9fc;vertical-align:middle;text-align:left;min-height:150px;max-height:500px;">
+      class="dlgContent">
       <div #dlgContent4Template></div>
     </div>
       
