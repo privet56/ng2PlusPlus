@@ -102,4 +102,114 @@ export class WsCallHistoryComponent implements OnInit
     }
     return sum;
   }
+  public onExcelExport($event, fileDownload : HTMLAnchorElement) : boolean
+  {
+    let replaceAllInStr = function(s:string, search:string, replacement:string) : string
+    {
+      {
+        let i:number=0;
+        while(s.indexOf(search) > -1)
+        {
+          i++;
+          if(i > 999)
+          {
+            console.log("WsCallHistory:onExcelExport WRN 1 !replace(i:"+i+")'"+search+"' ==> '"+replacement+"'");
+            break;
+          }
+          s = s.replace(search, replacement);
+        }
+      }
+
+      if(s.indexOf(search) > -1)
+      {
+        s = s.replace(new RegExp(search, 'g'), replacement);
+      }
+
+      if(s.indexOf(search) > -1)
+      {
+        console.log("WsCallHistory:onExcelExport WRN 2 !replace '"+search+"' ==> '"+replacement+"'");
+      }
+      return s;
+    };
+
+    let sRecordSeparator  = "\n";
+    let sCellSeparator    = ";";
+    
+    let toCSVCell = function(s:any, isNumber:boolean, isLast:boolean) : string
+    {
+      if(!isNumber)
+      {
+        s = replaceAllInStr(s, "\r\n"             , " ");
+        s = replaceAllInStr(s, "\n"               , " ");
+        s = replaceAllInStr(s, "\r"               , " ");
+        s = replaceAllInStr(s, "\t"               , " ");
+        s = replaceAllInStr(s, ","                , " ");
+        s = replaceAllInStr(s, ";"                , " ");
+        s = replaceAllInStr(s, sCellSeparator     , " "),
+        s = replaceAllInStr(s, sRecordSeparator   , " ");
+        s = replaceAllInStr(s, '"'                , "DOUBLEQUTOE");
+        s = replaceAllInStr(s, "'"                , "SINGLEQUOTE");
+        s = s.replace(/\s{2,}/g,' ');
+      }
+
+      let isLong:boolean = (!isNumber && (s.length > 19));
+
+      if(isLong && (s.length > 32000))
+      {
+        s = String(s).substring(0, 32000)+"...";
+      }
+
+  	  return ((isLong ? '"'+s+'"' : s) + (isLast ? sRecordSeparator : sCellSeparator));
+    };
+
+    let calls:Array<HttpCall> = this.getCallList();
+    let s = toCSVCell("ID"              , false, false)+  //0
+            toCSVCell("Call Name"       , false, false)+  //1
+            toCSVCell("OK?"             , false, false)+  //2
+            toCSVCell("Time (ms)"       , false, false)+  //3
+            toCSVCell("Request length"  , false, false)+  //4
+            toCSVCell("Response length" , false, false)+  //5
+            toCSVCell("Request"         , false, false)+  //6
+            toCSVCell("Response"        , false, true);   //7
+
+    for(let i:number=0;i<calls.length;i++)
+    {
+      let call:HttpCall = calls[i];
+      let ok:string = call.end ? ''+call.success : 'running...';
+      let time:number = call.end ? call.time : 0;
+
+      s +=  toCSVCell(call.id           , true , false)+    //0
+            toCSVCell(call.name         , false, false)+    //1
+            toCSVCell(ok                , false, false)+    //2
+            toCSVCell(time              , true , false)+    //3
+            toCSVCell(call.requestlen   , true , false)+    //4
+            toCSVCell(call.responselen  , true , false)+    //5
+            toCSVCell(call.request      , false, false)+    //6
+            toCSVCell(call.response     , false, true);     //7
+    }
+
+    let dobtoa:boolean = false;
+
+    if(dobtoa)
+    {
+      s = btoa(s);          //btoa doesn't support \uFEFF
+    }
+    else
+    {
+      s = '\uFEFF'+s;       //magic for excel
+      s = encodeURIComponent(s);
+    }
+
+    { //offer for open/download
+      let mimetype:string = "text/csv";//"text/comma-separated-values";  //text/csv
+      let enc:string = dobtoa ? ";base64" : "";
+      let url:string = "data:"+mimetype+';charset=utf-8'+enc+','+s;
+
+      fileDownload.href = url;    //TODO: IE looks for an ~'App' .!?
+      fileDownload.click();
+      //window.open(url);
+    }
+
+    return false;
+  }
 }

@@ -13,8 +13,14 @@
 			[responsive]="true"
 			(onRowSelect)="onRowSelect($event)">
 
-      <header><span style="color:red;margin-left:33px;">{{ getCallList().length + ' calls' }}</span></header>
-      <footer><span style="color:red;margin-left:33px;">{{ 'Server worked for '+ getSumServerWork() + ' ms in sum' }}</span></footer>
+      <p-header>
+        <div>
+          <span style="color:red;margin-left:33px;">{{ getCallList().length + ' calls' }}</span>
+          <a #historyCSVDownload href="data:text/csv;charset=utf-8," download="webservice-call-history.csv"></a>
+          <a href="#" (click)="onExcelExport($event, historyCSVDownload)" style="text-align:right;float:right;" pTooltip="Open in Excel"><img src="assets/file_excel.png" /></a>
+        </div>
+      </p-header>
+      <p-footer><span style="color:red;margin-left:33px;">{{ 'Server worked for '+ getSumServerWork() + ' ms in sum' }}</span></p-footer>
 
       <!-- idx -->
       <p-column field="id" header="idx" [style]="{'width':'11px'}">
