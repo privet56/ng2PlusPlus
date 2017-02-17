@@ -13,9 +13,9 @@
     class="dlg"
     [width]=500>
     
-    <header>
+    <p-header>
       <div #dlgHeader [innerHTML]="header" style="font-weight:bold;font-size:150%;">Information</div>    
-    </header>
+    </p-header>
 
     <div #dlgContent [innerHTML]="content | sani"  *ngIf="!childComponentRef"
       class="dlgContent">&nbsp;
@@ -26,11 +26,11 @@
       <div #dlgContent4Template></div>
     </div>
       
-    <footer>
+    <p-footer>
         <div #dlgFooter style="float:right;margin:6px;">
           <button pButton type="button" (click)="hideDlg()" label="Close"
              pTooltip="Click to Close" tooltipPosition="top" icon="fa fa-times-circle" style="float:right;min-width:85px;">
           </button>
         </div>
-    </footer>
+    </p-footer>
 </p-dialog>
