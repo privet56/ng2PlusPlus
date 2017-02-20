@@ -188,7 +188,9 @@ export class WsCallHistoryComponent implements OnInit
             toCSVCell(call.response     , false, true);     //7
     }
 
+    let ie:boolean = (window.navigator.msSaveOrOpenBlob != undefined); 
     let dobtoa:boolean = false;
+    let csv:string = s;
 
     if(dobtoa)
     {
@@ -196,17 +198,34 @@ export class WsCallHistoryComponent implements OnInit
     }
     else
     {
-      s = '\uFEFF'+s;       //magic for excel
       s = encodeURIComponent(s);
+      s = '\uFEFF'+s;       //magic for excel
     }
 
     { //offer for open/download
-      let mimetype:string = "text/csv";//"text/comma-separated-values";  //text/csv
+      let mimetype:string = "text/csv";//"vnd.openxmlformats-officedocument.spreadsheetml.sheet";//"application/vnd.ms-excel";//"text/comma-separated-values"
       let enc:string = dobtoa ? ";base64" : "";
       let url:string = "data:"+mimetype+';charset=utf-8'+enc+','+s;
 
       fileDownload.href = url;    //TODO: IE looks for an ~'App' .!?
-      fileDownload.click();
+      //possible solution: downloadify(http://pixelgraphics.us/downloadify/test.html , requires flash)
+      if(ie)
+      {/*
+        var charCodeArr = new Array(csv.length);
+        for (var i = 0; i < csv.length; ++i) {
+            var charCode = csv.charCodeAt(i);
+            charCodeArr[i] = charCode;
+        }
+        var blob = new Blob([new Uint8Array(charCodeArr)], {type: enc});
+        var url2 = window.URL.createObjectURL(blob);
+        fileDownload.href = url2;*/
+        fileDownload.click();
+        //window.navigator.msSaveOrOpenBlob(blob, "webservice-call-history.csv");
+      }
+      else
+      {
+        fileDownload.click();
+      }
       //window.open(url);
     }
 

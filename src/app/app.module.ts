@@ -42,6 +42,7 @@ import { AddnewcollaborationComponent } from './addnewcollaboration/addnewcollab
 import { ContactsComponent } from './addnewcollaboration/contacts/contacts.component';
 import { AttachmentsComponent } from './addnewcollaboration/attachments/attachments.component';
 import { HttpCallsServiceService } from './services/http-calls-service.service';
+import { HitPerPagerComponent } from './search/resultlist/hit-per-pager/hit-per-pager.component';
 
 
 @NgModule({
@@ -64,6 +65,7 @@ import { HttpCallsServiceService } from './services/http-calls-service.service';
     SaniPipe,
     XmlEscaperPipe,
     GraphsComponent,
+    HitPerPagerComponent,
     GraphComponent, 
     PersistentRouterOutlet, AddnewcollaborationComponent, ContactsComponent, AttachmentsComponent
     

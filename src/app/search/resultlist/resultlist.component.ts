@@ -6,7 +6,10 @@ import { QueryPart } from '../../shared/pojo/querypart';
 import { ResolvCounter } from '../../shared/resolvCounter';
 import { ResolvCounterSeq } from '../../shared/resolvCounterSeq';
 import { UXmlUtil } from '../../shared/uXmlUtil';
-import { GraphsComponent } from './graphs/graphs.component';  
+import { GraphsComponent } from './graphs/graphs.component';
+//import { HitPerPagerComponent  } from './hit-per-pager/hit-per-pager.component';
+//import { DataTableModule } from 'primeng/primeng';
+
 
 @Component({
   selector: 'app-resultlist',
@@ -16,6 +19,8 @@ import { GraphsComponent } from './graphs/graphs.component';
 export class ResultlistComponent implements OnInit
 {
   @ViewChild(GraphsComponent) graphsComponent: GraphsComponent;
+  //@ViewChild(DataTableModule) resultListTable: DataTableModule;
+  //@ViewChild(HitPerPagerComponent) hitPerPager: HitPerPagerComponent;
 
   private hitsDesc : string = null;
   private hitResolvDesc : string = null;
@@ -183,6 +188,20 @@ export class ResultlistComponent implements OnInit
 
     });
   }
+  /*  //not needed because of [rowsPerPageOptions]="[5,10,20, 25, 30]"
+  public lastHitPerPage:number = 0;
+  get hitsPerPage() : number
+  {
+    if(this.lastHitPerPage != this.hitPerPager.hitPerPage)
+    {
+      this.lastHitPerPage = this.hitPerPager.hitPerPage;
+      let _hits : Array<Hit> = this.hits;
+      this.hits = new Array<Hit>();
+      console.log(this.resultListTable);
+      setTimeout(() => {this.hits = _hits}, 99);     //ok, ok ... not the nicest solution...
+    }
+    return this.hitPerPager.hitPerPage;
+  }*/
   public onShowGraph($event:any) : void
   {
 

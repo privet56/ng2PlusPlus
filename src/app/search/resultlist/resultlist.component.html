@@ -12,7 +12,7 @@
             onLabel= " &nbsp; &nbsp; Graph &nbsp; &nbsp; "
             offLabel=" &nbsp; &nbsp; Hits &nbsp; &nbsp; "
             (onChange)="onShowGraph($event)"
-            pTooltip="Switch Graph / Hitlist Display!" tooltipPosition="right"
+            pTooltip="Switch Graph / Hitlist Display!" tooltipPosition="top"
             [appendTo]="tooltipParent">
             
           </p-inputSwitch>
@@ -43,9 +43,16 @@
       scrollHeight="200px"
 			[responsive]="true"
 			(onRowSelect)="onRowSelect($event)"
+      [rowsPerPageOptions]="[5,10,20, 25, 30]"
+      #resultListTable
        >
 
-      <p-header><span style="color:orange;margin-left:33px;" pTooltip="{{hitsDesc}}  {{hitResolvDesc}}">{{hitsDesc}}</span></p-header>
+      <p-header>
+        <div>
+          <span style="color:orange;margin-left:33px;" pTooltip="{{hitsDesc}}  {{hitResolvDesc}}">{{hitsDesc}}</span>
+          <!-- app-hit-per-pager #hitPerPager style="text-align:right;float:right;"></app-hit-per-pager -->
+        </div>
+      </p-header>
       <p-footer><span style="color:orange;margin-left:33px;" pTooltip="{{hitsDesc}}  {{hitResolvDesc}}">{{hitResolvDesc}}</span></p-footer>
 
       <!-- ID -->
