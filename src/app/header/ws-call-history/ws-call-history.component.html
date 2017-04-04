@@ -1,6 +1,8 @@
 <div>
   <!-- [style]="{'width':'40px'}" works only if [resizableColumns]="false" -->
 
+  <textarea #cpytextarea style="position:absolute;"></textarea>
+
   <p-dataTable [value]="getCallList()"
       [rows]="30"
       [paginator]="true"
@@ -120,5 +122,22 @@
           </div>
         </ng-template>
       </p-column>
+      <!-- buttons -->
+      <p-column field="responselen" header="copy" [filter]="false" [style]="{'width':'70px'}">
+		    <ng-template pTemplate="header">
+			    <span label="Copy" style="padding:4px;white-space:nowrap;">Copy</span>
+		    </ng-template>
+        <ng-template pTemplate="body" let-call="rowData">
+          <div style="white-space:nowrap;">
+          <button pTooltip="Copy Request" [escape]="false" tooltipPosition="top" class="cell" (click)="onCopyRequest(call)">
+              Req.
+          </button>
+          <button pTooltip="Copy Response" [escape]="false" tooltipPosition="top" class="cell" (click)="onCopyResponse(call)">
+              Resp.
+          </button>
+          </div>
+        </ng-template>
+      </p-column>
+
   </p-dataTable>
 </div>

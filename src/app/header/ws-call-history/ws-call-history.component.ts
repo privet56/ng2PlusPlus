@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { ElementRef, ViewChild, Component, OnInit } from '@angular/core';
 import { HttpCall } from '../../shared/pojo/httpCall';
 import { HttpCallsServiceService } from '../../services/http-calls-service.service';
+import { MsgService } from '../../services/msg.service';
 
 @Component({
   selector: 'app-ws-call-history',
@@ -9,10 +10,11 @@ import { HttpCallsServiceService } from '../../services/http-calls-service.servi
 })
 export class WsCallHistoryComponent implements OnInit
 {
+  @ViewChild('cpytextarea') vCpyTextArea :	ElementRef;
   public static MAX_ARRAY_LEN:number = 9333;
   sortOrder:any = null;
 
-  constructor(private httpCallsServiceService : HttpCallsServiceService)
+  constructor(private httpCallsServiceService : HttpCallsServiceService, private msgService : MsgService)
   {
 
   }
@@ -163,14 +165,21 @@ export class WsCallHistoryComponent implements OnInit
     };
 
     let calls:Array<HttpCall> = this.getCallList();
+    let bOutputContent:boolean = false; //TODO: allow content if save for CSV!
+
     let s = toCSVCell("ID"              , false, false)+  //0
             toCSVCell("Call Name"       , false, false)+  //1
             toCSVCell("OK?"             , false, false)+  //2
             toCSVCell("Time (ms)"       , false, false)+  //3
             toCSVCell("Request length"  , false, false)+  //4
+            (bOutputContent ?
+            (
             toCSVCell("Response length" , false, false)+  //5
             toCSVCell("Request"         , false, false)+  //6
-            toCSVCell("Response"        , false, true);   //7
+            toCSVCell("Response"        , false, true)    //7
+            ) : (
+            toCSVCell("Response length" , false, true)    //5
+            ));
 
     for(let i:number=0;i<calls.length;i++)
     {
@@ -183,9 +192,14 @@ export class WsCallHistoryComponent implements OnInit
             toCSVCell(ok                , false, false)+    //2
             toCSVCell(time              , true , false)+    //3
             toCSVCell(call.requestlen   , true , false)+    //4
+            (bOutputContent ?
+            (
             toCSVCell(call.responselen  , true , false)+    //5
-            toCSVCell(call.request      , false, false)+    //6
-            toCSVCell(call.response     , false, true);     //7
+            toCSVCell('call.request'    , false, false)+    //6
+            toCSVCell('call.response'   , false, true)      //7
+            ) : (
+            toCSVCell(call.responselen  , true , true)      //5
+            ));
     }
 
     let ie:boolean = (window.navigator.msSaveOrOpenBlob != undefined); 
@@ -229,6 +243,35 @@ export class WsCallHistoryComponent implements OnInit
       //window.open(url);
     }
 
+    return false;
+  }
+  onCopyRequest(call:HttpCall) : boolean
+  {
+    this.cpy(call.request);
+    return false;
+  }
+  protected cpy(s:string) : boolean
+  {
+    try
+    {
+      this.vCpyTextArea.nativeElement.value = s;
+      this.vCpyTextArea.nativeElement.select();
+      var successful = document.execCommand('copy');
+      if(!successful)
+        this.msgService.error('Error', 'Oops, unable to copy');
+      else
+        this.msgService.inf('Info', 'Copied '+s.length+' characters.');
+      return true;
+    }
+    catch (err)
+    {
+      this.msgService.error('Error', 'Oops, unable to copy. '+err);
+      return false;
+    }
+  }
+  onCopyResponse(call:HttpCall) : boolean
+  {
+    this.cpy(call.response);
     return false;
   }
 }
