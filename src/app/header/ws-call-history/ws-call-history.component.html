@@ -31,41 +31,41 @@
 
       <!-- idx -->
       <p-column field="id" header="idx" [style]="{'width':'11px'}">
-		    <template pTemplate="header">
+		    <ng-template pTemplate="header">
           ID
-		    </template>
-        <template pTemplate="body" let-call="rowData" let-rowIndex="rowIndex">
+		    </ng-template>
+        <ng-template pTemplate="body" let-call="rowData" let-rowIndex="rowIndex">
           <div class="cell" style="width:9px;white-space:nowrap"
             (click)="onRowSelect(call)">
               {{ call.id }}
           </div>
-        </template>
+        </ng-template>
       </p-column>
       <!-- name -->
       <p-column field="name" header="name" [filter]="true" filterMatchMode="contains" [style]="{'width':'70px'}"
         sortable="custom" (sortFunction)="sort($event)">
-		    <template pTemplate="header">
+		    <ng-template pTemplate="header">
 			    <span label="Name"
             style="padding:4px;"
             pTooltip="Find!" tooltipPosition="top"
           >Name</span>
-		    </template>
-        <template pTemplate="body" let-call="rowData">
+		    </ng-template>
+        <ng-template pTemplate="body" let-call="rowData">
           <div pTooltip="Call Name"
             tooltipPosition="top"
             class="cell" style="width:9px"
             (click)="onRowSelect(call)">
               {{ call.name }}
           </div>
-        </template>
+        </ng-template>
       </p-column>
       <!-- OK -->
       <p-column field="id" header="OK?" [filter]="true" [style]="{'width':'70px'}"
         sortable="custom" (sortFunction)="sort($event)">
-		    <template pTemplate="header">
+		    <ng-template pTemplate="header">
 			    <span label="OK?" style="padding:4px;">OK?</span>
-		    </template>
-        <template pTemplate="body" let-call="rowData">
+		    </ng-template>
+        <ng-template pTemplate="body" let-call="rowData">
           <div pTooltip="OK?"
             tooltipPosition="top"
             class="cell" style="width:100%;text-align:center;vertical-align:middle;"
@@ -73,52 +73,52 @@
             [style.background-color]="call.success ? 'lightgreen' : (call.end ? 'red' : 'orange')">
               {{ call.end ? call.success : 'running...' }}
           </div>
-        </template>
+        </ng-template>
       </p-column>
       <!-- time -->
       <p-column field="time" header="Time" [filter]="true" [style]="{'width':'70px'}"
         sortable="custom" (sortFunction)="sort($event)">
-		    <template pTemplate="header">
+		    <ng-template pTemplate="header">
 			    <span label="Time" style="padding:4px;">Time</span>
-		    </template>
-        <template pTemplate="body" let-call="rowData">
+		    </ng-template>
+        <ng-template pTemplate="body" let-call="rowData">
           <div pTooltip="Time"
             tooltipPosition="top"
             class="cell" style="width:100%;white-space:nowrap"
             (click)="onRowSelect(call)">
               {{ call.end ? call.time+' ms' : '' }}
           </div>
-        </template>
+        </ng-template>
       </p-column>
       <!-- requestlen -->
       <p-column field="requestlen" header="request length" [filter]="true" [style]="{'width':'70px'}"
         sortable="custom" (sortFunction)="sort($event)">
-		    <template pTemplate="header">
+		    <ng-template pTemplate="header">
 			    <span label="requestlen" style="padding:4px;white-space:nowrap;">req. length</span>
-		    </template>
-        <template pTemplate="body" let-call="rowData">
-          <div pTooltip="{{ call.request | xmlesc }}"
+		    </ng-template>
+        <ng-template pTemplate="body" let-call="rowData">
+          <div pTooltip="{{ call.request | xmlesc }}" [escape]="false"
             tooltipPosition="top"
             class="cell" style="width:9px"
             (click)="onRowSelect(call)">
               {{ call.requestlen }}
           </div>
-        </template>
+        </ng-template>
       </p-column>
       <!-- responselen -->
       <p-column field="responselen" header="response length" [filter]="true" [style]="{'width':'70px'}"
         sortable="custom" (sortFunction)="sort($event)">
-		    <template pTemplate="header">
+		    <ng-template pTemplate="header">
 			    <span label="response" style="padding:4px;white-space:nowrap;">resp. length</span>
-		    </template>
-        <template pTemplate="body" let-call="rowData">
-          <div pTooltip="{{call.response | xmlesc }}"
+		    </ng-template>
+        <ng-template pTemplate="body" let-call="rowData">
+          <div pTooltip="{{call.response | xmlesc }}" [escape]="false"
             tooltipPosition="top"
             class="cell" style="width:9px"
             (click)="onRowSelect(call)">
               {{ call.end ? call.responselen : '' }}
           </div>
-        </template>
+        </ng-template>
       </p-column>
   </p-dataTable>
 </div>

@@ -57,31 +57,31 @@
 
       <!-- ID -->
       <p-column field="id" header="ID" [filter]="true" filterMatchMode="contains" [style]="{'width':'70px'}" sortable="custom" (sortFunction)="sort($event)">
-		    <template pTemplate="header">
+		    <ng-template pTemplate="header">
 			    <span label="ID"
             style="padding:4px;"
             pTooltip="Find!" tooltipPosition="top"
           >ID</span>
-		    </template>
-        <template pTemplate="body" let-hit="rowData">
+		    </ng-template>
+        <ng-template pTemplate="body" let-hit="rowData">
           <div pTooltip="The ID of the collaboration"
             tooltipPosition="top"
             class="cell" style="width:9px"
             (click)="onRowSelect({data:hit})">
               {{ hit.id }}
           </div>
-        </template>
+        </ng-template>
       </p-column>
       <!-- title -->
       <p-column field="Title" header="Title (in English)" [sortable]="true"  [filter]="true" filterMatchMode="contains" (sortFunction)="sort($event)">
-        <template pTemplate="body" let-hit="rowData">
+        <ng-template pTemplate="body" let-hit="rowData">
           <div pTooltip="<div><strong style='color:white'>Title:</strong></div> {{ hit.getTitle() }}"
-            tooltipPosition="top"
+            tooltipPosition="top" [escape]="false"
             class="cell"
             (click)="onRowSelect({data:hit})">          
               {{hit.getTitle() | truncate : 33 }}
           </div>
-        </template>
+        </ng-template>
       </p-column>
       <!-- status -->
       <p-column field="hitDetails.StatusName" header="Status" [sortable]="true" [filter]="true" (sortFunction)="sort($event)">
@@ -93,14 +93,14 @@
       </p-column>
       <!-- siemenscontactName -->
       <p-column field="hitDetails.SiemensContacts.SiemensContact.Name" header="SiemensContact" [sortable]="true"  [filter]="true" filterMatchMode="contains" (sortFunction)="sort($event)">
-        <template pTemplate="body" let-hit="rowData">
+        <ng-template pTemplate="body" let-hit="rowData">
           <div pTooltip="The main Siemens Contact is<br><span style='color:red;'>{{hit.hitDetails.SiemensContacts.SiemensContact.FirstName+' '+hit.hitDetails.SiemensContacts.SiemensContact.Name}}</span>"
-            tooltipPosition="top"
+            tooltipPosition="top" [escape]="false"
             class="cell" (click)="onRowSelect({data:hit})">
             {{ hit.hitDetails.SiemensContacts.SiemensContact.Name }}
             {{ hit.hitDetails.SiemensContacts.SiemensContact.FirstName }}
           </div>
-        </template>
+        </ng-template>
       </p-column>
       <!-- lastRevisor -->
       <p-column field="hitDetails.LastRevisor" header="Revisor" [sortable]="true"  [filter]="true" filterMatchMode="contains" [sortable]="true" (sortFunction)="sort($event)">
@@ -108,21 +108,21 @@
       </p-column>
       <!-- type -->
       <p-column field="hitDetails.CollaborationTypeName" header="Collaboration Type" [sortable]="true" [filter]="true" (sortFunction)="sort($event)">
-        <template pTemplate="body" let-hit="rowData">
+        <ng-template pTemplate="body" let-hit="rowData">
           <div pTooltip="{{ hit.hitDetails.CollaborationTypeName }}"
             tooltipPosition="top"
             class="cell"  (click)="onRowSelect({data:hit})">
             {{ hit.hitDetails.CollaborationTypeName | truncate : 33 }}
           </div>
-        </template>
+        </ng-template>
       </p-column>
       <!-- siemensbudget -->
       <p-column field="hitDetails.SiemensBudget" header="Budget" [sortable]="true" [filter]="true" (sortFunction)="sort($event)">
-        <template pTemplate="body" let-hit="rowData">
+        <ng-template pTemplate="body" let-hit="rowData">
           <div class="cell" (click)="onRowSelect({data:hit})">
             {{ hit.getSiemensBudget() | currency :'EUR':'4.2-2' }}
           </div>
-          </template>        
+        </ng-template>        
       </p-column>
   </p-dataTable>
 </div>

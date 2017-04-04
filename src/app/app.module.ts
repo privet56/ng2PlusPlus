@@ -37,13 +37,12 @@ import { XmlEscaperPipe } from './shared/XmlEscaperPipe';
 import { ng2mfbModule } from './3rdparty/ng-floating-button';
 import { GraphsComponent } from './search/resultlist/graphs/graphs.component';
 import { GraphComponent } from './search/resultlist/graph/graph.component'; 
-import { PersistentRouterOutlet } from './shared/PersistentRouterOutlet';
 import { AddnewcollaborationComponent } from './addnewcollaboration/addnewcollaboration.component';
 import { ContactsComponent } from './addnewcollaboration/contacts/contacts.component';
 import { AttachmentsComponent } from './addnewcollaboration/attachments/attachments.component';
 import { HttpCallsServiceService } from './services/http-calls-service.service';
 import { HitPerPagerComponent } from './search/resultlist/hit-per-pager/hit-per-pager.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -67,7 +66,7 @@ import { HitPerPagerComponent } from './search/resultlist/hit-per-pager/hit-per-
     GraphsComponent,
     HitPerPagerComponent,
     GraphComponent, 
-    PersistentRouterOutlet, AddnewcollaborationComponent, ContactsComponent, AttachmentsComponent
+    AddnewcollaborationComponent, ContactsComponent, AttachmentsComponent
     
   ],
   imports: [
@@ -94,8 +93,8 @@ import { HitPerPagerComponent } from './search/resultlist/hit-per-pager/hit-per-
     FormsModule,
     HttpModule,
     UnicoRoutingModule,
-    ng2mfbModule
-    
+    ng2mfbModule,
+    BrowserAnimationsModule
   ],
   entryComponents: [AppComponent, WsCallHistoryComponent],
   providers: [ MsgService, DlgService, CfgService, ConfirmationService, UnicoService, StaticService, HttpCallsServiceService,

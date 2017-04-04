@@ -1,4 +1,4 @@
-import { ViewChild, Component, OnInit } from '@angular/core';
+import { ViewChild, Component, OnInit, ViewChildren, QueryList } from '@angular/core';
 import { MsgService } from '../../services/msg.service';
 import { Hit } from '../../shared/pojo/hit';
 import { UnicoService } from '../../services/unico.service';
@@ -7,9 +7,10 @@ import { ResolvCounter } from '../../shared/resolvCounter';
 import { ResolvCounterSeq } from '../../shared/resolvCounterSeq';
 import { UXmlUtil } from '../../shared/uXmlUtil';
 import { GraphsComponent } from './graphs/graphs.component';
+import { Tooltip } from 'primeng/primeng';
+
 //import { HitPerPagerComponent  } from './hit-per-pager/hit-per-pager.component';
 //import { DataTableModule } from 'primeng/primeng';
-
 
 @Component({
   selector: 'app-resultlist',
@@ -19,6 +20,8 @@ import { GraphsComponent } from './graphs/graphs.component';
 export class ResultlistComponent implements OnInit
 {
   @ViewChild(GraphsComponent) graphsComponent: GraphsComponent;
+  //@ViewChildren(Tooltip) vTooltips : QueryList<Tooltip>;
+
   //@ViewChild(DataTableModule) resultListTable: DataTableModule;
   //@ViewChild(HitPerPagerComponent) hitPerPager: HitPerPagerComponent;
 
@@ -220,4 +223,15 @@ export class ResultlistComponent implements OnInit
                 }
             ]
         }  
+
+  /*ngDoCheck() : void
+  {
+    if(this.vTooltips)
+    {
+      this.vTooltips.forEach((tooltip:Tooltip, index:number, tooltips:Tooltip[]) =>
+      {
+        tooltip.escape = false; //TODO: why is escape="false" in html not working?
+      });
+    }
+  }*/
 }

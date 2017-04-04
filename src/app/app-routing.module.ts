@@ -7,7 +7,6 @@ import { AdminComponent } from './admin/admin.component';
 import { InfoComponent } from './info/info.component';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { UReuseStrategy } from './shared/UReuseStrategy';
-//import { PersistentRouterOutlet } from './shared/PersistentRouterOutlet';
 
 //Attention: order is important because of routeFromIndex(...) 
 const routes: Routes = [
@@ -60,7 +59,6 @@ const routes: Routes = [
   exports: [RouterModule],
   providers: [
     {provide: LocationStrategy, useClass: HashLocationStrategy},
-//  {provide: RouterOutlet, useClass: PersistentRouterOutlet },
      {provide: RouteReuseStrategy, useClass: UReuseStrategy }
   ]
 })

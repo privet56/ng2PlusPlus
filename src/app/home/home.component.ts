@@ -1,9 +1,10 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChildren, QueryList, DoCheck } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/core';
 import { DlgService } from '../services/dlg.service';
 import { CfgService } from '../services/cfg.service';
 import { UnicoService } from '../services/unico.service';
 import { UStrUtil } from '../shared/uStrUtil';
+import { Tooltip } from 'primeng/primeng';
 
 @Component({
   selector: 'app-home',
@@ -25,8 +26,10 @@ import { UStrUtil } from '../shared/uStrUtil';
     ])
   ]
 })
-export class HomeComponent implements OnInit, AfterViewInit
+export class HomeComponent implements OnInit, AfterViewInit//, DoCheck
 {
+  //@ViewChildren(Tooltip) vTooltips : QueryList<Tooltip>;
+
   public news : any = { };
   public event : any = { };
 

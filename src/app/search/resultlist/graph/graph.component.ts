@@ -37,6 +37,8 @@ export class GraphComponent implements OnInit
   @Input() data : any = { };
   @Input() datasIndex : number = -1;
 
+  protected chartdata : any = null;
+
   //@Input() dropHandler:Function = null;
   @Input() dropHandler:ValueEmitter<number> = null;
 
@@ -120,6 +122,7 @@ export class GraphComponent implements OnInit
 
   public getCharData() : any
   {
+    if(this.chartdata) return this.chartdata;
     let data = {};
     let labels:Array<string> = new Array<string>();
     let datasets:Array<any> = new Array<any>();
@@ -133,8 +136,10 @@ export class GraphComponent implements OnInit
       hoverBackgroundColor:datasets_hoverBackgroundColor
     };
     data['labels'] = labels;
-    data['datasets'] = datasets;    
-    return data;
+    data['datasets'] = datasets;
+
+    this.chartdata = data;  //if you return always new object, ng2 thinks that the object changed!
+    return this.chartdata;
   }
   private getClearName(s:string) : string
   {

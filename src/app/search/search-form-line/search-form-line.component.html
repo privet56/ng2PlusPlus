@@ -11,12 +11,12 @@
                 [editable]="true"
                 filter="filter"
                 >
-        <template let-type>
+        <ng-template let-type>
             <div class="ui-helper-clearfix" style="height: 25px;">
                 <div style="font-size:14px;float:right;margin-top:4px;white-space:nowrap;"
                     >{{type.label}}</div>
             </div>
-        </template>
+        </ng-template>
     </p-dropdown>
     </td>
     <td *ngIf="values && values.length" style="padding-top:5px;">
@@ -27,11 +27,11 @@
                 [style]="{'width':'150px'}"
                 editable="true"
                 filter="filter">
-        <template let-value>
+        <ng-template let-value>
             <div class="ui-helper-clearfix" style="height: 25px;">
                 <div style="font-size:14px;float:right;margin-top:4px">{{value.label}}</div>
             </div>
-        </template>
+        </ng-template>
     </p-multiSelect>
     </td>
     <td *ngIf="type && values && !values.length">
@@ -51,12 +51,12 @@
                 [editable]="false"
                 [disabled]="getBooleanOperators().length < 2"
                 >
-        <template let-booleanOperator>
+        <ng-template let-booleanOperator>
             <div class="ui-helper-clearfix" style="height: 25px;">
                 <div style="font-size:14px;float:right;margin-top:4px;white-space:nowrap;"
                     >{{booleanOperator.label}}</div>
             </div>
-        </template>
+        </ng-template>
     </p-dropdown>
     </td>
     <td *ngIf="type">

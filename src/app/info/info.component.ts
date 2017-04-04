@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, DoCheck, ViewChildren, QueryList } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/core';
 import { CfgService } from '../services/cfg.service';
+import { Tooltip } from 'primeng/primeng';
 
 @Component({
   selector: 'app-info',
@@ -22,8 +23,10 @@ import { CfgService } from '../services/cfg.service';
     ])
   ]
 })
-export class InfoComponent implements OnInit
+export class InfoComponent implements OnInit//, DoCheck
 {
+  //@ViewChildren(Tooltip) vTooltips : QueryList<Tooltip>;
+
   constructor()
   {
 
@@ -33,4 +36,16 @@ export class InfoComponent implements OnInit
   {
 
   }
+
+  /*ngDoCheck() : void
+  {
+    if(this.vTooltips)
+    {
+      this.vTooltips.forEach((tooltip:Tooltip, index:number, tooltips:Tooltip[]) =>
+      {
+        tooltip.escape = false;
+
+      });
+    }
+  }*/
 }

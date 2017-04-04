@@ -13,6 +13,7 @@
   background:none !important;
   background-color: red !important;
   display:inline-block !important;
+  position: static !important;
 }*/
 
 html
@@ -376,3 +377,10 @@ select.ng-invalid, input.ng-invalid
 	border-bottom-left-radius: 16px;
 	border-bottom-right-radius: 16px;
 }
+/*.tooltipstyle
+{
+  background:none !important;
+  background-color: green !important;
+  color: green !important;
+}
+*/
