@@ -21,3 +21,7 @@ GUI :
     Hitlist
 
 ![ng2plusplusinmotion](https://raw.githubusercontent.com/privet56/ng2PlusPlus/master/ngplusplus.in.motion.gif)
+
+## Testing with Karma:
+
+![ng2pluspluskarmatests](https://raw.githubusercontent.com/privet56/ng2PlusPlus/master/ng2plusplus.,karma.tests.png)
