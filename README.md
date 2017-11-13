@@ -22,6 +22,14 @@ GUI :
 
 ![ng2plusplusinmotion](https://raw.githubusercontent.com/privet56/ng2PlusPlus/master/ngplusplus.in.motion.gif)
 
+## Clipboard Handling:
+
+![ng2plusplus.clipboard.png](https://raw.githubusercontent.com/privet56/ng2PlusPlus/master/ng2plusplus.clipboard.png)
+
+## PDF-Generation on the Client:
+
+![ng2plusplus.pdf.png](https://raw.githubusercontent.com/privet56/ng2PlusPlus/master/ng2plusplus.pdf.png)
+
 ## Testing with Karma:
 
 ![ng2pluspluskarmatests](https://raw.githubusercontent.com/privet56/ng2PlusPlus/master/ng2plusplus.,karma.tests.png)
