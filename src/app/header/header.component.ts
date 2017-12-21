@@ -90,7 +90,7 @@ export class HeaderComponent implements OnInit, AfterViewInit
   }
   public onHistory() : boolean
   {
-    let header : string = "UNICO++ WebService Call History";
+    let header : string = "NG++ WebService Call History";
 
     if(!header) //if(false) would bring exception "unreachable code detected"
     {
@@ -123,11 +123,11 @@ export class HeaderComponent implements OnInit, AfterViewInit
     let imgs : string = `<img src='assets/arrowExternal.png' style='margin-left:6px;margin-right:3px;' />
                           <img src='assets/file_pdf.png' style='margin-left:3px;margin-right:6px;' />`;
     let txt : string = `
-      <h3>Here you can get information about UNICO++!</h3>
+      <h3>Here you can get information about NG++!</h3>
       <div style='padding-top:6px;padding-bottom:6px;'>
       <div class='linkdiv'><a href="assets/QuickStartGuide_UnicoPlus.pdf" target='_new' data-toggle="tooltip" title="<span style='color:red;'>Open PDF in new window...</span>">
         `+imgs+`
-        UNICO++ manual
+        NG++ manual
       </a></div>
       <div class='linkdiv'><a href="assets/QuickStartGuide_UnicoPlus.pdf" target='_new'>
         `+imgs+`
@@ -144,7 +144,7 @@ export class HeaderComponent implements OnInit, AfterViewInit
       </div>
     `;
 
-    let header : string = "UNICO++ Help";
+    let header : string = "NG++ Help";
     this.dlgService.showDlgMsg(txt, header, null, null);
     
     return false;

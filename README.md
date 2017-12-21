@@ -1,5 +1,5 @@
 # WebApp: ng2PlusPlus
-### with Angular 2.x & PrimeNG; using XML-SOAP Backend WebServices
+### with Angular & PrimeNG; using XML-SOAP Backend WebServices
 ## language: TypeScript, JavaScript
 
 GUI :
@@ -33,3 +33,7 @@ GUI :
 ## Testing with Karma:
 
 ![ng2pluspluskarmatests](https://raw.githubusercontent.com/privet56/ng2PlusPlus/master/ng2plusplus.,karma.tests.png)
+
+## Dialog with Live Updated Data:
+
+![ng2plusplusdialogwithlivedataupdate](https://raw.githubusercontent.com/privet56/ng2PlusPlus/master/ng2plusplus.dlg.with.live.update.gif)
